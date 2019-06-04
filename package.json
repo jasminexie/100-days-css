@@ -1,0 +1,23 @@
+{
+  "name": "100dayspostcss",
+  "version": "1.0.0",
+  "description": "100 days css challenge with postcss",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel watch */index.pug",
+    "test": "exit 0"
+  },
+  "keywords": [
+    "css",
+    "postcss",
+    "PostCSS"
+  ],
+  "author": "Jasmine Xie",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "devDependencies": {
+    "pug": "^2.0.3"
+  }
+}
