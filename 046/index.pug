@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      - var rings = Array(6).fill().map((_, i) => i)
+      - var dots = Array(12).fill().map((_, i) => i)
+      each ring in rings
+        div(class='ring ring-' + ring)
+          each dot in dots
+            div(class='dot dot-' + dot)
+

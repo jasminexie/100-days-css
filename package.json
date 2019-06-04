@@ -4,7 +4,7 @@
   "description": "100 days css challenge with postcss",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel watch */index.pug",
+    "dev": "parcel */index.pug",
     "test": "exit 0"
   },
   "keywords": [
@@ -18,6 +18,15 @@
     "parcel-bundler": "^1.12.3"
   },
   "devDependencies": {
-    "pug": "^2.0.3"
+    "autoprefixer": "latest",
+    "postcss-calc": "^7.0.1",
+    "postcss-custom-properties": "^8.0.10",
+    "postcss-for": "^2.1.1",
+    "postcss-modules": "^1.4.1",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-simple-vars": "^5.0.2",
+    "pug": "^2.0.3",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0"
   }
 }

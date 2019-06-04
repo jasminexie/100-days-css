@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+$frameHeight: 400px;
+$frameWidth: 400px;
+$spinnerSize: 200px;
+
+:root {
+  --frameHeight: 400px;
+  --frameWidth: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $frameHeight;
+  width: $frameWidth;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom right, #43c6ac, #f8ffae);
+
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+  overflow: hidden;
+  color: #fff;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $spinnerSize;
+  height: $spinnerSize;
+  margin-top: calc(0- $spinnerSize/2);
+  margin-left: calc(0- $spinnerSize/2);
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: white;
+}
+
+
+/* dots */
+@for $i from 0 to 5 {
+  /* size of ring */
+  $size: calc($spinnerSize - $(i)px * 5);
+  /* radius of ring */
+  $radius: calc($size / 2);
+  /* size of dot */
+  $dot: calc(10px - $(i)px);
+  /* opacity of dot */
+  $alpha: calc(1 - $i / 8);
+
+  /* initial rotation of ring */
+  $ringDeg: calc(360deg / 20 * $i);
+
+  .ring-$i {
+    transform: translate(-50%, -50%) rotate($ringDeg);
+    transform-origin: center;
+    animation: inout-$i 4s ease-in-out alternate infinite;
+  }
+  .ring-$i .dot {
+    width: $dot;
+    height: $dot;
+    opacity: $alpha;
+  }
+
+  @keyframes inout-$i {
+    0% {
+      transform: scale(calc(1 - $i /7)) rotate(calc($i*5deg + $ringDeg));
+    }
+    100% {
+      transform: scale(calc(1 - $i /22)) rotate(calc($i*10deg + 360deg + $ringDeg));
+    }
+  }
+
+  @for $j from 0 to 11 {
+    /* initial rotation of dot */
+    $dotDeg: calc(360deg / 12 * $j);
+    .ring-$i .dot-$j {
+      transform: translate(0, $radius) rotate($dotDeg);
+      transform-origin: 0 calc(0 - $radius);
+    }
+  }
+}
