@@ -37,6 +37,8 @@ $spinnerSize: 200px;
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: white;
 }
@@ -44,26 +46,20 @@ $spinnerSize: 200px;
 
 /* dots */
 @for $i from 0 to 5 {
-  /* size of ring */
-  $size: calc($spinnerSize - $(i)px * 5);
-  /* radius of ring */
-  $radius: calc($size / 2);
-  /* size of dot */
-  $dot: calc(10px - $(i)px);
-  /* opacity of dot */
-  $alpha: calc(1 - $i / 8);
+  /* radius of each ring */
+  $radius: calc(($spinnerSize - $(i)px * 5) / 2);
+  /* opacity of each dot */
+  $alpha: calc(1 - $i / 10);
 
   /* initial rotation of ring */
-  $ringDeg: calc(360deg / 20 * $i);
+  $ringDeg: calc(360deg / 12 * $i);
 
   .ring-$i {
     transform: translate(-50%, -50%) rotate($ringDeg);
     transform-origin: center;
-    animation: inout-$i 4s ease-in-out alternate infinite;
+    animation: inout-$i 6s ease-in-out alternate infinite;
   }
   .ring-$i .dot {
-    width: $dot;
-    height: $dot;
     opacity: $alpha;
   }
 
@@ -80,8 +76,8 @@ $spinnerSize: 200px;
     /* initial rotation of dot */
     $dotDeg: calc(360deg / 12 * $j);
     .ring-$i .dot-$j {
-      transform: translate(0, $radius) rotate($dotDeg);
-      transform-origin: 0 calc(0 - $radius);
+      transform: translate3d(0, calc(-1 * $radius), 0) rotate($dotDeg);
+      transform-origin: 0 $radius;
     }
   }
 }
