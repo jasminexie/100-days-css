@@ -4,11 +4,6 @@ $frameHeight: 400px;
 $frameWidth: 400px;
 $spinnerSize: 200px;
 
-:root {
-  --frameHeight: 400px;
-  --frameWidth: 400px;
-}
-
 .frame {
   position: absolute;
   top: 50%;
@@ -17,8 +12,7 @@ $spinnerSize: 200px;
   width: $frameWidth;
   transform: translate(-50%, -50%);
   background: linear-gradient(to bottom right, #43c6ac, #f8ffae);
-
-  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   color: #fff;
 }
@@ -29,8 +23,8 @@ $spinnerSize: 200px;
   left: 50%;
   width: $spinnerSize;
   height: $spinnerSize;
-  margin-top: calc(0- $spinnerSize/2);
-  margin-left: calc(0- $spinnerSize/2);
+  margin-top: calc(0 - $spinnerSize/2);
+  margin-left: calc(0 - $spinnerSize/2);
 }
 
 .dot {
@@ -43,11 +37,11 @@ $spinnerSize: 200px;
   background: white;
 }
 
-
 /* dots */
 @for $i from 0 to 5 {
   /* radius of each ring */
-  $radius: calc(($spinnerSize - $(i)px * 5) / 2);
+  $radius: calc(($spinnerSize - $(i) px * 5) / 2);
+
   /* opacity of each dot */
   $alpha: calc(1 - $i / 10);
 
@@ -59,22 +53,25 @@ $spinnerSize: 200px;
     transform-origin: center;
     animation: inout-$i 6s ease-in-out alternate infinite;
   }
+
   .ring-$i .dot {
     opacity: $alpha;
   }
 
   @keyframes inout-$i {
     0% {
-      transform: scale(calc(1 - $i /7)) rotate(calc($i*5deg + $ringDeg));
+      transform: scale(calc(1 - $i / 7)) rotate(calc($i*5deg + $ringDeg));
     }
+
     100% {
-      transform: scale(calc(1 - $i /22)) rotate(calc($i*10deg + 360deg + $ringDeg));
+      transform: scale(calc(1 - $i / 22)) rotate(calc($i*10deg + 360deg + $ringDeg));
     }
   }
 
   @for $j from 0 to 11 {
     /* initial rotation of dot */
     $dotDeg: calc(360deg / 12 * $j);
+
     .ring-$i .dot-$j {
       transform: translate3d(0, calc(-1 * $radius), 0) rotate($dotDeg);
       transform-origin: 0 $radius;

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel */index.pug",
+    "lint": "stylelint */*.css --fix",
     "test": "exit 0"
   },
   "keywords": [

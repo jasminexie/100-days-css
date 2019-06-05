@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      - var size = 20;
+      - var x = 0, y = 0;
+      - var selected = [129, 130, 148, 149, 150, 151, 167, 168, 169, 170, 171, 172, 186, 187, 189, 190, 192, 193, 206, 207, 208, 209, 210, 211, 212, 213, 228, 231, 247, 249, 250, 252, 266, 268, 271, 273];
+      while x < size
+        while y < size
+          if selected.includes(x*size + y)
+            input(id='input-'+x+'-'+y, type="checkbox", checked="checked")
+          else
+            input(id='input-'+x+'-'+y, type="checkbox")
+          label(for='input-'+x+'-'+y)
+          - ++y;
+        - y = 0;
+        - ++x;
+
