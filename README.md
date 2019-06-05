@@ -34,3 +34,4 @@ And the following abilities:
 * Find a way to lint pug.
 * Unexpected unknown at-rule "@for"   at-rule-no-unknown
 * Put this somewhere on my blog.
+* Add an entry html file and a nice table of contents somewhere.
