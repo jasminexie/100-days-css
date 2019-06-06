@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html src/**/index.pug --no-cache",
+    "build": "parcel build src/index.html src/**/index.pug",
     "lint": "stylelint src/**/*.css --fix",
     "test": "exit 0"
   },

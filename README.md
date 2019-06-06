@@ -16,8 +16,7 @@ npm install
 npm run dev
 ```
 
-Open `localhost:1234/${day_number}/index.html`, where `day_number` = folder number (ie. 046).
-Please don't forget the `index.html`.
+Open `localhost:1234/index.html`. Please don't forget the `index.html`.
 
 ## Other
 
@@ -40,5 +39,3 @@ And the following abilities:
 
 * Find a way to lint pug.
 * Unexpected unknown at-rule "@for"   at-rule-no-unknown
-* Put this somewhere on my blog.
-* Add an entry html file and a nice table of contents somewhere.
