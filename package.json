@@ -4,7 +4,7 @@
   "description": "100 days css challenge with postcss",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/**/index.pug",
+    "dev": "parcel src/index.html src/**/index.pug --no-cache",
     "lint": "stylelint src/**/*.css --fix",
     "test": "exit 0"
   },
@@ -16,9 +16,13 @@
   "author": "Jasmine Xie",
   "license": "ISC",
   "dependencies": {
-    "parcel-bundler": "^1.12.3"
+    "element-ui": "^2.9.1",
+    "parcel-bundler": "^1.12.3",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
     "autoprefixer": "latest",
     "postcss-calc": "^7.0.1",
     "postcss-custom-properties": "^8.0.10",
@@ -28,7 +32,9 @@
     "postcss-preset-env": "^6.6.0",
     "postcss-simple-vars": "^5.0.2",
     "pug": "^2.0.3",
+    "sass": "^1.20.3",
     "stylelint": "^10.0.1",
-    "stylelint-config-standard": "^18.3.0"
+    "stylelint-config-standard": "^18.3.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }
