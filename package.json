@@ -4,8 +4,8 @@
   "description": "100 days css challenge with postcss",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel */index.pug",
-    "lint": "stylelint */*.css --fix",
+    "dev": "parcel src/**/index.pug",
+    "lint": "stylelint src/**/*.css --fix",
     "test": "exit 0"
   },
   "keywords": [
@@ -24,6 +24,7 @@
     "postcss-custom-properties": "^8.0.10",
     "postcss-for": "^2.1.1",
     "postcss-modules": "^1.4.1",
+    "postcss-nested": "^4.1.2",
     "postcss-preset-env": "^6.6.0",
     "postcss-simple-vars": "^5.0.2",
     "pug": "^2.0.3",

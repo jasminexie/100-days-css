@@ -1,0 +1,75 @@
+$frame: 400px;
+$size: 200px;
+$delta: calc($size / 2);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $frame;
+  width: $frame;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(to top left, #7f7fd5, #86a8e7, #91eae4);
+  perspective: 1000px;
+}
+
+.cube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $frame;
+  height: $frame;
+  transform: translateZ(calc(-1 * $delta)) rotateX(-20deg) rotateY(45deg);
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+
+  &:hover {
+    transform: translateZ(calc(-1 * $delta)) rotateX(160deg) rotateY(135deg);
+  }
+}
+
+.side {
+  position: absolute;
+  top: calc(($frame - $size) / 2);
+  left: calc(($frame - $size) / 2);
+  width: $size;
+  height: $size;
+  background-color: rgba(255, 255, 255, 0.1);
+  line-height: $size;
+  text-align: center;
+  font-family: Ariel, sans-serif;
+  font-size: 40px;
+}
+
+.top {
+  background-color: rgba(255, 0, 0, 0.5);
+  transform: rotateX(90deg) translateZ($delta);
+}
+
+.bottom {
+  background-color: rgba(0, 255, 255, 0.5);
+  transform: rotateX(-90deg) translateZ($delta);
+}
+
+.left {
+  background-color: rgba(0, 0, 255, 0.5);
+  transform: rotateY(-90deg) translateZ($delta);
+}
+
+.right {
+  background-color: rgba(255, 255, 0, 0.5);
+  transform: rotateY(90deg) translateZ($delta);
+}
+
+.front {
+  background-color: rgba(0, 255, 0, 0.5);
+  transform: translateZ($delta);
+}
+
+.back {
+  background-color: rgba(255, 0, 255, 0.5);
+  transform: translateZ(calc(-1 * $delta));
+}

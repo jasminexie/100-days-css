@@ -5,5 +5,6 @@ module.exports = {
     require('postcss-for'),
     require('postcss-simple-vars'),
     require('postcss-calc'),
+    require('postcss-nested')
   ]
 };

@@ -1,6 +1,13 @@
 # 100 days of CSS challenge
 
-OR: 100 days of tyring not to suck at CSS.
+OR: 100 days of trying not to suck at CSS.
+
+My goal: to write animations with no javascript. Pure CSS (or pure PostCSS, if you will).
+I'll make an exception for Pug, because although it's technically Javascript pre-processing
+HTML, you can't really expect me to write 400 divs by hand, lol.
+
+And PostCSS is technically Javascript post-processing HTML, but the whole point of this is
+to learn PostCSS, really, so that doesn't count either.
 
 ## Run
 
