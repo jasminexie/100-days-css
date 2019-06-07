@@ -38,3 +38,7 @@ visually spin in and out here. Add a tiny bit of JS, and you could simulate a ra
 You could let the sides pop out or something for a more dramatic effect. With the `paused`
 option in animation, you could add buttons to play-pause rotations along different axis,
 with *absolutely no js*. **This** is a snippet worth saving.
+
+8. See https://stackoverflow.com/questions/18047353/fix-css-hover-on-iphone-ipad-ipod/38554650#38554650.
+To enable :hover effect on every kind of elements on a Touch enabled browser, you need to tell
+him that your elements are clickable.

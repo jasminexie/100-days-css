@@ -1,0 +1,79 @@
+$frame: 400px;
+$size: 20;
+$color: #fffbd5;
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $frame;
+  width: $frame;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background: #f27121;
+}
+
+.grid {
+  float: left;
+  position: relative;
+  width: calc($frame/$size);
+  height: calc($frame/$size);
+  box-sizing: border-box;
+  background: none;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: -10px;
+  padding: 3px;
+  box-sizing: border-box;
+  background: $color;
+  border-radius: 50%;
+  transform: translate3d(200px, 200px, 0);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid $color;
+    box-sizing: border-box;
+    animation: pulsate 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@for $i from 0 to 19 {
+  @for $j from 0 to 19 {
+    $pixels: calc($frame/$size);
+    $top: calc($i * $pixels + $pixels / 2);
+    $left: calc($j * $pixels + $pixels / 2);
+
+    .grid-$(i)-$(j):hover ~ .dot {
+      transform: translate3d($left, $top, 0);
+    }
+  }
+}

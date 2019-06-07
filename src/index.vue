@@ -18,7 +18,7 @@
   export default Vue.extend({
     data() {
       return {
-        pageRange: [[46, 48]],
+        pageRange: [[46, 49]],
         // private property, do not edit!!
         i: 0
       };

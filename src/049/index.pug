@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      - var size = 20;
+        - var x = 0, y = 0;
+        while x < size
+          while y < size
+            div(class='grid grid-'+x+'-'+y onclick='void(0)')
+            - ++y;
+          - y = 0;
+          - ++x;
+      .dot
+
