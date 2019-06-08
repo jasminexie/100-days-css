@@ -11,7 +11,9 @@
     "test": "exit 0"
   },
   "husky": {
-    "post-commit": "npm run update-config && git add config.json && git commit -m 'chore: update config' --no-verify"
+    "hooks": {
+      "post-commit": "npm run update-config && git add config.json && git commit -m 'chore: update config' --no-verify"
+    }
   },
   "keywords": [
     "css",
