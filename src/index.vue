@@ -13,29 +13,18 @@
 </template>
 
 <script>
+  import config from '../config.json';
   import Vue from 'vue';
 
   export default Vue.extend({
     data() {
       return {
-        pageRange: [[46, 49]],
+        options: config || [],
         // private property, do not edit!!
         i: 0
       };
     },
     computed: {
-      options() {
-        const ranges = this.pageRange.filter(item => Array.isArray(item));
-        const pages = this.pageRange.filter(item => !Array.isArray(item));
-        ranges.forEach(([start, end]) => {
-          const array = Array(end - start + 1)
-            .fill(0)
-            .map((_, i) => start + i);
-          pages.push(...array);
-        });
-        pages.sort();
-        return pages.map(i => String('000' + i).slice(-3));
-      },
       selectedIndex: {
         get: function () {
           return this.i;
