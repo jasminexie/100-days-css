@@ -7,7 +7,7 @@
     "dev": "parcel src/index.html src/**/index.pug --no-cache",
     "build": "parcel build src/index.html src/**/index.pug",
     "lint": "stylelint src/**/*.css --fix",
-    "update-config": "babel-node ./scrupt/generate-range",
+    "update-config": "babel-node ./script/generate-range",
     "test": "exit 0"
   },
   "husky": {
