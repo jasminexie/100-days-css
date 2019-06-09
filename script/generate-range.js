@@ -2,7 +2,7 @@ const fs = require('fs'),
   path = require('path'),
   isEqual = require('lodash/isEqual');
 
-const configPath = path.join(__dirname, '..', 'config.json';
+const configPath = path.join(__dirname, '..', 'config.json');
 const isDir = function (path) {
   try {
     const stat = fs.lstatSync(path);
