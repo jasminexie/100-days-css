@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      input#playpause(type='checkbox')
+      label.button(for='playpause')
+        .play
+        .pause
+      .counter
+        - var thousand = 0, hundred = 0, ten = 0, digit = 0;
+        .number.thousand
+          while thousand < 10
+            span(class=''+thousand)=thousand++
+        .number.hundred
+          while hundred < 10
+            span(class=''+hundred)=hundred++
+        .number.ten
+          while ten < 10
+            span(class=''+ten)=ten++
+        .number.digit
+          while digit < 10
+            span(class=''+digit)=digit++
