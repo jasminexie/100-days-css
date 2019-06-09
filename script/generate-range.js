@@ -18,5 +18,7 @@ const valid = files.filter(file => isDir(path.join(__dirname, '..', 'src', file)
 const existing = fs.readFileSync(configPath);
 if (!existing || !isEqual(existing, valid)) {
   fs.writeFileSync(configPath, JSON.stringify(valid));
+} else {
+  process.exit(1);
 }
 
