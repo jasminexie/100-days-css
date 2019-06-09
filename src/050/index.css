@@ -37,16 +37,20 @@ $frame: 400px;
 }
 
 @keyframes shadow {
-
-  0%,87%,100% {
+  0%,
+  87%,
+  100% {
     transform: translate3d(-50%, -50%, 0) scale(0);
   }
+
   25% {
     transform: translate3d(-50%, -50%, 0) scale(1);
   }
+
   84% {
     transform: translate3d(-50%, -50%, 0) scale(1);
   }
+
   85% {
     transform: translate3d(-50%, -50%, 0) scale(0.8);
   }
@@ -54,39 +58,52 @@ $frame: 400px;
 
 @keyframes egg {
   0% {
-    transform: translate3d(0,-350px,0) scale(.8, 1.2);
+    transform: translate3d(0, -350px, 0) scale(0.8, 1.2);
   }
+
   25% {
-    transform: translate3d(0,20px,0) scale(1.05, .9);
+    transform: translate3d(0, 20px, 0) scale(1.05, 0.9);
   }
+
   30% {
-    transform: translate3d(0,-20px,0) scale(.95, 1.02);
+    transform: translate3d(0, -20px, 0) scale(0.95, 1.02);
   }
+
   35% {
-    transform: translate3d(0,10px,0) scale(1.01, .98);
+    transform: translate3d(0, 10px, 0) scale(1.01, 0.98);
   }
-  40%, 45% {
-    transform: translate3d(0,0,0) scale(1) rotate(0);
+
+  40%,
+  45% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0);
   }
+
   50% {
-    transform: translate3d(0,0,0) scale(1) rotate(5deg);
+    transform: translate3d(0, 0, 0) scale(1) rotate(5deg);
   }
+
   55% {
-    transform: translate3d(0,0,0) scale(1) rotate(-5deg);
+    transform: translate3d(0, 0, 0) scale(1) rotate(-5deg);
   }
+
   60% {
-    transform: translate3d(0,0,0) scale(1) rotate(5deg);
+    transform: translate3d(0, 0, 0) scale(1) rotate(5deg);
   }
-  65%, 70% {
-    transform: translate3d(0,0,0) scale(1) rotate(0deg);
+
+  65%,
+  70% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
   }
+
   75% {
-    transform: translate3d(0,10px,0) scale(1.01, .98);
+    transform: translate3d(0, 10px, 0) scale(1.01, 0.98);
   }
+
   80% {
-    transform: translate3d(0,-20px,0) scale(1.02, .95);
+    transform: translate3d(0, -20px, 0) scale(1.02, 0.95);
   }
+
   100% {
-    transform: translate3d(0,350px,0) scale(.9, 1.1);
+    transform: translate3d(0, 350px, 0) scale(0.9, 1.1);
   }
 }

@@ -12,7 +12,7 @@ $textColor: white;
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
-  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB",Arial,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
 }
 
 input {
@@ -70,15 +70,6 @@ input:checked ~ .button {
   }
 }
 
-input:checked ~ .counter {
-  .thousand,
-  .hundred,
-  .ten,
-  .digit {
-    animation-play-state: paused;
-  }
-}
-
 .counter {
   display: flex;
   width: 100px;
@@ -95,6 +86,15 @@ input:checked ~ .counter {
   overflow: hidden;
 }
 
+input:checked ~ .counter {
+  .thousand,
+  .hundred,
+  .ten,
+  .digit {
+    animation-play-state: paused;
+  }
+}
+
 .number {
   flex: auto;
   position: relative;
@@ -104,12 +104,15 @@ input:checked ~ .counter {
   &.thousand {
     animation: count 10000s steps(1) infinite;
   }
+
   &.hundred {
     animation: count 1000s steps(1) infinite;
   }
+
   &.ten {
     animation: count 100s steps(1) infinite;
   }
+
   &.digit {
     animation: count 10s steps(1) infinite;
   }
@@ -130,6 +133,7 @@ input:checked ~ .counter {
 @keyframes count {
   @for $i from 0 to 9 {
     $delta:calc($i * -1 * 40px);
+
     $(i)0% {
       transform: translateY($delta);
     }

@@ -1,6 +1,8 @@
 const fs = require('fs'),
-  path = require('path');
+  path = require('path'),
+  isEqual = require('lodash/isEqual');
 
+const configPath = path.join(__dirname, '..', 'config.json';
 const isDir = function (path) {
   try {
     const stat = fs.lstatSync(path);
@@ -13,4 +15,8 @@ const isDir = function (path) {
 const files = fs.readdirSync(path.join(__dirname, '..', 'src'));
 const valid = files.filter(file => isDir(path.join(__dirname, '..', 'src', file)));
 
-fs.writeFileSync(path.join(__dirname, '..', 'config.json'), JSON.stringify(valid));
+const existing = fs.readFileSync(configPath);
+if (!existing || !isEqual(existing, valid)) {
+  fs.writeFileSync(configPath, JSON.stringify(valid));
+}
+

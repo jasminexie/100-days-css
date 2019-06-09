@@ -28,4 +28,3 @@ iteration syntax, but then it occurred to me that instead of animating 40 elemen
     border-width: 5px 0 5px 10px;
     border-color: transparent transparent transparent red;
     ```
-3. 

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "parcel src/index.html src/**/index.pug --no-cache",
     "build": "parcel build src/index.html src/**/index.pug",
-    "lint": "stylelint src/**/*.css --fix",
+    "lint:css": "stylelint src/**/*.css --fix",
+    "lint:pug": "pug-lint src/**/*.pug",
+    "lint": "npm run lint:css && npm run lint:pug",
     "update-config": "babel-node ./script/generate-range",
     "test": "exit 0"
   },
@@ -33,6 +35,7 @@
     "@vue/component-compiler-utils": "^3.0.0",
     "autoprefixer": "latest",
     "husky": "latest",
+    "lodash": "^4.17.11",
     "postcss-calc": "^7.0.1",
     "postcss-custom-properties": "^8.0.10",
     "postcss-for": "^2.1.1",
@@ -41,6 +44,7 @@
     "postcss-preset-env": "^6.6.0",
     "postcss-simple-vars": "^5.0.2",
     "pug": "^2.0.3",
+    "pug-lint": "^2.5.0",
     "sass": "^1.20.3",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",

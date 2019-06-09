@@ -38,7 +38,7 @@ $spinnerSize: 200px;
 /* dots */
 @for $i from 0 to 5 {
   /* radius of each ring */
-  $radius: calc(($spinnerSize - $(i)px * 5) / 2);
+  $radius: calc(($spinnerSize - $i * 5px) / 2);
 
   /* opacity of each dot */
   $alpha: calc(1 - $i / 10);

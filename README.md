@@ -37,5 +37,5 @@ And the following abilities:
 
 ## TODO
 
-* Find a way to lint pug.
-* Unexpected unknown at-rule "@for"   at-rule-no-unknown
+* Husky's post-commit hook runs twice
+* Write a script to scaffold a new challenge (with `index.pug`, `index.css` and `README.md` with presets written)
