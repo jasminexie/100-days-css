@@ -14,7 +14,7 @@
   },
   "husky": {
     "hooks": {
-      "post-commit": "npm run update-config && git add config.json && git commit -m 'chore: update config' --no-verify"
+      "pre-commit": "npm run lint && npm run update-config && git add config.json"
     }
   },
   "keywords": [
