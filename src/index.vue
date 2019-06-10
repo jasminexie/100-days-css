@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>100 Days of CSS</h1>
+    <h1>{{ days }} Days of CSS</h1>
     <div class="content">
       <el-button icon="el-icon-arrow-left" circle @click="move(-1)"></el-button>
       <iframe :src="options[selectedIndex] + '/index.html'"></iframe>
@@ -38,6 +38,9 @@
             this.i = val;
           }
         }
+      },
+      days() {
+        return this.options.length;
       }
     },
     methods: {
