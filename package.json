@@ -43,6 +43,7 @@
     "postcss-calc": "^7.0.1",
     "postcss-custom-properties": "^8.0.10",
     "postcss-for": "^2.1.1",
+    "postcss-mixins": "^6.2.1",
     "postcss-modules": "^1.4.1",
     "postcss-nested": "^4.1.2",
     "postcss-preset-env": "^6.6.0",

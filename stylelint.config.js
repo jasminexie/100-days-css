@@ -2,7 +2,7 @@ module.exports = {
   "extends": "stylelint-config-standard",
   rules: {
     "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["function", "for", "each", "include", "mixin"]
+      "ignoreAtRules": ["function", "for", "each", "include", "mixin", "define-mixin"]
     }]
   }
 };
