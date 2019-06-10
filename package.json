@@ -32,11 +32,11 @@
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
-    "ansi-colors": "^3.2.4",
-    "enquirer": "^2.3.0",
     "@babel/node": "^7.4.5",
     "@vue/component-compiler-utils": "^3.0.0",
+    "ansi-colors": "^3.2.4",
     "autoprefixer": "latest",
+    "enquirer": "^2.3.0",
     "husky": "latest",
     "lodash": "^4.17.11",
     "postcss-at-rules-variables": "^0.1.8",
@@ -49,6 +49,7 @@
     "postcss-simple-vars": "^5.0.2",
     "pug": "^2.0.3",
     "pug-lint": "^2.5.0",
+    "sass": "^1.21.0",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "vue-template-compiler": "^2.6.10"

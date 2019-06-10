@@ -19,7 +19,7 @@ $radius: 30px;
   .ring-$ring {
     $dotsPerCircle: calc($ring * 6 + 18);
     $r: calc($radius + ($ring * 8px));
-    $delay: calc($ring / 3) s;
+    $delay: calc(1s * $ring / 3);
 
     position: absolute;
     top: 50%;
