@@ -18,6 +18,34 @@ npm run dev
 
 Open `localhost:1234/index.html`. Please don't forget the `index.html`.
 
+## Develop
+
+### Create a new challenge template
+
+```$xslt
+npm run new
+```
+
+Enter a new challenge from the prompt. Name should be a 3-digit number ranged from 0 to 100 
+(ie. 046).
+
+### Start a dev server
+
+```$xslt
+npm run dev
+```
+
+### Debug
+
+Open `localhost:1234/${day_number}/index.html` to see the page. Where day_number is a 3-digit 
+number ranged from 0 to 100 (ie. 046).
+
+## Build
+
+```$xslt
+npm run build
+```
+
 ## Other
 
 This is an exercise in the following technologies:
