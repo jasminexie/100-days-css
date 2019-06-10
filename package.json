@@ -26,14 +26,14 @@
   "author": "Jasmine Xie",
   "license": "ISC",
   "dependencies": {
-    "ansi-colors": "^3.2.4",
     "element-ui": "^2.9.1",
-    "enquirer": "^2.3.0",
     "parcel-bundler": "^1.12.3",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
+    "ansi-colors": "^3.2.4",
+    "enquirer": "^2.3.0",
     "@babel/node": "^7.4.5",
     "@vue/component-compiler-utils": "^3.0.0",
     "autoprefixer": "latest",
