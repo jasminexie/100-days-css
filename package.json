@@ -6,7 +6,7 @@
   "scripts": {
     "new": "babel-node ./script/generate-challenge",
     "dev": "parcel src/index.html src/**/index.pug",
-    "build": "parcel build src/index.html src/**/index.pug",
+    "build": "parcel build --public-url '.' src/index.html src/**/index.pug",
     "lint:css": "stylelint src/**/*.css --fix",
     "lint:pug": "pug-lint src/**/*.pug",
     "lint": "npm run lint:css && npm run lint:pug",
