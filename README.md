@@ -37,5 +37,4 @@ And the following abilities:
 
 ## TODO
 
-* Husky's post-commit hook runs twice
-* Write a script to scaffold a new challenge (with `index.pug`, `index.css` and `README.md` with presets written)
+(Nothing at the moment)

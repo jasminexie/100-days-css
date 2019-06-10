@@ -4,6 +4,7 @@
   "description": "100 days css challenge with postcss",
   "main": "index.js",
   "scripts": {
+    "new": "babel-node ./script/generate-challenge",
     "dev": "parcel src/index.html src/**/index.pug",
     "build": "parcel build src/index.html src/**/index.pug",
     "lint:css": "stylelint src/**/*.css --fix",
@@ -25,7 +26,9 @@
   "author": "Jasmine Xie",
   "license": "ISC",
   "dependencies": {
+    "ansi-colors": "^3.2.4",
     "element-ui": "^2.9.1",
+    "enquirer": "^2.3.0",
     "parcel-bundler": "^1.12.3",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
