@@ -1,0 +1,57 @@
+$frame: 400px;
+$color: white;
+$radius: 30px;
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $frame;
+  width: $frame;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background: linear-gradient(to bottom, #093637, #44A08D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+}
+
+@for $ring from 0 to 9 {
+  .ring-$ring {
+    $dotsPerCircle: calc($ring * 6 + 18);
+    $r: calc($radius + ($ring * 8px));
+    $delay: calc($ring / 3)s;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(2 * $r);
+    height: calc(2 * $r);
+    transform: translate(-50%, -50%);
+
+    .fill {
+      width: 8px;
+      height: 8px;
+      background: $color;
+      border-radius: 50%;
+      animation: pulsate 2s ease-in-out $delay alternate infinite both;
+    }
+
+    @for $dot from 0 to 71 {
+      $angle: calc($dot / $dotsPerCircle * 360deg);
+      .dot-$dot {
+        position: absolute;
+        transform: rotate($angle);
+        transform-origin: $r $r;
+      }
+    }
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

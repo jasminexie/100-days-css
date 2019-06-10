@@ -4,7 +4,7 @@
   "description": "100 days css challenge with postcss",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html src/**/index.pug --no-cache",
+    "dev": "parcel src/index.html src/**/index.pug",
     "build": "parcel build src/index.html src/**/index.pug",
     "lint:css": "stylelint src/**/*.css --fix",
     "lint:pug": "pug-lint src/**/*.pug",
@@ -36,6 +36,7 @@
     "autoprefixer": "latest",
     "husky": "latest",
     "lodash": "^4.17.11",
+    "postcss-at-rules-variables": "^0.1.8",
     "postcss-calc": "^7.0.1",
     "postcss-custom-properties": "^8.0.10",
     "postcss-for": "^2.1.1",
@@ -45,7 +46,6 @@
     "postcss-simple-vars": "^5.0.2",
     "pug": "^2.0.3",
     "pug-lint": "^2.5.0",
-    "sass": "^1.20.3",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "vue-template-compiler": "^2.6.10"

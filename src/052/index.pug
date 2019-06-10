@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      - var rings = 10, x = 0;
+        while x < rings
+          div(class='ring ring-'+x)
+            - var dots = x * 6 + 18, y = 0;
+            while y < dots
+              div(class='dot dot-'+y++)
+                .fill
+          - x++;
