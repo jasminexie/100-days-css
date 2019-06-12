@@ -1,0 +1,107 @@
+:root {
+  --frame: 400px;
+  --wave-back-color: #406384;
+  --wave-middle-color: #5d90bf;
+  --wave-front-color: #7eb3e6;
+  --sky-color: #263a4d;
+  --waves: 12;
+  --waves-visible: 8;
+  --wave-length: calc(var(--frame) / var(--waves-visible));
+
+  /* To be overwritten */
+  --main-color: var(--wave-front-color);
+  --filler-color: var(--sky-color);
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: var(--frame);
+  width: var(--frame);
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  background: linear-gradient(to bottom, black, var(--sky-color) 40%);
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.circle {
+  width: var(--wave-length);
+  height: var(--wave-length);
+  border-radius: var(--wave-length);
+  position: relative;
+  top: calc(-0.5 * var(--wave-length));
+}
+
+.wave-back {
+  --main-color: var(--wave-back-color);
+  --filler-color: var(--sky-color);
+
+  height: calc(5px + var(--wave-length));
+  animation: wave-back 4s ease-in-out alternate infinite;
+}
+
+.wave-middle {
+  --main-color: var(--wave-middle-color);
+  --filler-color: var(--wave-back-color);
+
+  height: calc(5px + var(--wave-length));
+  animation: wave-middle 4s ease-in-out alternate infinite;
+}
+
+.wave-front {
+  --main-color: var(--wave-front-color);
+  --filler-color: var(--wave-middle-color);
+
+  height: calc(1.3 * var(--wave-length));
+  animation: wave-front 4s ease-in-out alternate infinite;
+}
+
+.wave {
+  display: flex;
+  background: var(--main-color);
+
+  :nth-child(odd) {
+    background: var(--main-color);
+  }
+
+  :nth-child(even) {
+    background: var(--filler-color);
+  }
+}
+
+@keyframes wave-back {
+  from {
+    transform: translate3d(-60px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-40px, 0, 0);
+  }
+}
+
+@keyframes wave-middle {
+  from {
+    transform: translate3d(-50px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-60px, 0, 0);
+  }
+}
+
+@keyframes wave-front {
+  from {
+    transform: translate3d(-100px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

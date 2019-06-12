@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      .bottom
+        - var circles = 10, x = 0, y = 0, z = 0;
+        .wave.wave-back
+          while x < circles
+            .circle
+            - x++;
+        .wave.wave-middle
+          while y < circles
+            .circle
+            - y++;
+        .wave.wave-front
+          while z < circles
+            .circle
+            - z++;
