@@ -1,11 +1,13 @@
-$frame: 400px;
+:root {
+  --frame: 400px;
+}
 
 .frame {
   position: absolute;
   top: 50%;
   left: 50%;
-  height: $frame;
-  width: $frame;
+  height: var(--frame);
+  width: var(--frame);
   transform: translate(-50%, -50%);
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
