@@ -95,8 +95,9 @@ label {
   width: 50px;
   height: 10px;
   position: absolute;
-  top: 43px;
-  left: 23px;
+  top: 45px;
+  left: 25px;
+  opacity: 0;
 
   div {
     width: 10px;
