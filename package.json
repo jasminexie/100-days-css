@@ -41,6 +41,7 @@
     "lodash": "^4.17.11",
     "postcss-at-rules-variables": "^0.1.8",
     "postcss-calc": "^7.0.1",
+    "postcss-color-function": "^4.1.0",
     "postcss-custom-properties": "^8.0.10",
     "postcss-for": "^2.1.1",
     "postcss-mixins": "^6.2.1",
