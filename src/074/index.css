@@ -64,6 +64,7 @@ label::before {
 }
 
 @for $i from 1 to 4 {
+  /* stylelint-disable */
   #r-$i:checked + label[for=r-i] {
     color: #ff5e62;
     background: none;
