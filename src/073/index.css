@@ -1,0 +1,69 @@
+:root {
+  --frame: 400px;
+  --font-size: 24px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: var(--frame);
+  width: var(--frame);
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  background: linear-gradient(to right, #faaca8, #ddd6f3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: white;
+  font-size: var(--font-size);
+  line-height: calc(1.5 * var(--font-size));
+  margin-right: 10px;
+  text-shadow: 2px 2px 2px color(white shade(40%));
+  user-select: none;
+}
+
+.rolling-text {
+  height: calc(1.5 * var(--font-size));
+  overflow: hidden;
+}
+
+.roll {
+  animation: rolling 5s ease-in-out infinite;
+}
+
+@keyframes rolling {
+  0%,
+  5% {
+    transform: translateY(0);
+  }
+
+  20%,
+  25% {
+    transform: translateY(calc(-1.5 * var(--font-size)));
+  }
+
+  40%,
+  45% {
+    transform: translateY(calc(-3 * var(--font-size)));
+  }
+
+  60%,
+  65% {
+    transform: translateY(calc(-4.5 * var(--font-size)));
+  }
+
+  80%,
+  85% {
+    transform: translateY(calc(-6 * var(--font-size)));
+  }
+
+  100% {
+    transform: translateY(calc(-7.5 * var(--font-size)));
+  }
+}
