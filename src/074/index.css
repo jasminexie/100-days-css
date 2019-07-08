@@ -64,12 +64,12 @@ label::before {
 }
 
 @for $i from 1 to 4 {
-  #r-$i:checked + label[for=r-i] {
+  #r-$i:checked + label {
     color: #ff5e62;
     background: none;
   }
 
-  #r-$i:checked + label[for=r-i]::before {
+  #r-$i:checked + label::before {
     transform: scale(1);
   }
 }

@@ -15,7 +15,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run update-config && git add config.json"
+      "pre-commit": "npm run lint && npm run update-config && git add ."
     }
   },
   "keywords": [
