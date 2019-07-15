@@ -1,0 +1,153 @@
+:root {
+  --frame: 400px;
+  --color: #52c234;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: var(--frame);
+  width: var(--frame);
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  background: radial-gradient(circle at center, #fdc830 40%, #f37355 100%);
+}
+
+.gem {
+  position: absolute;
+  width: 192px;
+  height: 126px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.gem > div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.bottom-left {
+  left: 0;
+  bottom: 0;
+  border-width: 84px 0 0 96px;
+  border-color:
+    color(var(--color) shade(40%))
+    transparent
+    transparent
+    transparent;
+}
+
+.bottom-center {
+  left: 54px;
+  bottom: 0;
+  z-index: 3;
+  border-width: 84px 42px 0 42px;
+  border-color:
+    color(var(--color) shade(25%))
+    transparent
+    transparent
+    transparent;
+}
+
+.bottom-right {
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  border-width: 84px 96px 0 0;
+  border-color:
+    var(--color)
+    transparent
+    transparent
+    transparent;
+}
+
+.top-left-left {
+  left: 0;
+  top: 0;
+  z-index: 2;
+  border-width: 0 22px 42px 32px;
+  border-color:
+    transparent
+    transparent
+    color(var(--color) shade(25%))
+    transparent;
+}
+
+.gem .top-left {
+  top: 0;
+  left: 32px;
+  z-index: 1;
+  width: 64px;
+  height: 42px;
+  border: none;
+  background: var(--color);
+}
+
+.top-center {
+  left: 54px;
+  top: 0;
+  z-index: 2;
+  border-width: 0 42px 42px 42px;
+  border-color:
+    transparent
+    transparent
+    color(var(--color) shade(15%))
+    transparent;
+}
+
+.gem .top-right {
+  top: 0;
+  right: 32px;
+  z-index: 0;
+  width: 64px;
+  height: 42px;
+  background: color(var(--color) tint(50%));
+  border: none;
+  overflow: hidden;
+}
+
+.top-right-right {
+  right: 0;
+  top: 0;
+  z-index: 2;
+  border-width: 0 32px 42px 22px;
+  border-color:
+    transparent
+    transparent
+    color(var(--color) shade(25%))
+    transparent;
+}
+
+.flash {
+  position: absolute;
+  top: 0;
+  border: none;
+  height: 80px;
+  width: 6px;
+  z-index: 1;
+  transform: rotate(-45deg) translate(30px, 0);
+  background: color(var(--color) tint(80%));
+  animation: flash 3s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+
+  10%,
+  100% {
+    transform: rotate(-45deg) translate(80px, 0);
+  }
+}
