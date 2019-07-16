@@ -38,7 +38,7 @@
     "autoprefixer": "latest",
     "enquirer": "^2.3.0",
     "husky": "latest",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.14",
     "postcss-at-rules-variables": "^0.1.8",
     "postcss-calc": "^7.0.1",
     "postcss-color-function": "^4.1.0",
