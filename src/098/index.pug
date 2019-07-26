@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      .box
+        .box-top
+        .box-left
+        .box-bottom
+        .box-right
+      .elements
+        each sq in [1, 2, 3]
+          div(class="square blue square-"+sq)
+        each sq in [4, 5, 6, 7]
+          div(class="square orange square-"+sq)
+        each sq in [8]
+          div(class="square ochre square-"+sq)
+        each ci in [1, 2, 3]
+          div(class="circle blue circle-"+ci)
+        each ci in [4, 5, 6, 7]
+          div(class="circle orange circle-"+ci)
+        each ci in [8]
+          div(class="circle ochre circle-"+ci)
+      .boom BOOM

@@ -1,0 +1,235 @@
+:root {
+  --frame: 400px;
+  --box-color: #ff6b6b;
+  --color1: #f9d423;
+  --color2: #b3ffab;
+  --color3: #4bc0c8;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: var(--frame);
+  width: var(--frame);
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background: #2c3e50;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+}
+
+.box {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 120px;
+  left: 120px;
+}
+
+.box div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.box-top {
+  top: 0;
+  left: 0;
+  border-width: 80px 80px 0 80px;
+  border-color:
+    var(--box-color)
+    transparent
+    transparent
+    transparent;
+  animation: box-up 1.5s cubic-bezier(0.19, 0.69, 0.4, 1) infinite alternate;
+}
+
+.box-left {
+  top: 0;
+  left: 0;
+  border-width: 80px 0 80px 80px;
+  border-color:
+    transparent
+    transparent
+    transparent
+    color(var(--box-color) shade(10%));
+  animation: box-left 1.5s cubic-bezier(0.19, 0.69, 0.4, 1) infinite alternate;
+}
+
+.box-bottom {
+  bottom: 0;
+  left: 0;
+  border-width: 0 80px 80px 80px;
+  border-color:
+    transparent
+    transparent
+    color(var(--box-color) shade(30%))
+    transparent;
+  animation: box-bottom 1.5s cubic-bezier(0.19, 0.69, 0.4, 1) infinite alternate;
+}
+
+.box-right {
+  top: 0;
+  right: 0;
+  border-width: 80px 80px 80px 0;
+  border-color:
+    transparent
+    color(var(--box-color) shade(10%))
+    transparent
+    transparent;
+  animation: box-right 1.5s cubic-bezier(0.19, 0.69, 0.4, 1) infinite alternate;
+}
+
+@keyframes box-up {
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-180px);
+  }
+}
+
+@keyframes box-left {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-180px);
+  }
+}
+
+@keyframes box-right {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(180px);
+  }
+}
+
+@keyframes box-bottom {
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(180px);
+  }
+}
+
+.elements {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 185px;
+  left: 185px;
+}
+
+.square.blue {
+  background: var(--color1);
+}
+
+.square.orange {
+  background: var(--color2);
+}
+
+.square.ochre {
+  background: var(--color3);
+}
+
+.circle.blue {
+  border-color: var(--color1);
+}
+
+.circle.orange {
+  border-color: var(--color2);
+}
+
+.circle.ochre {
+  border-color: var(--color3);
+}
+
+.square {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.circle {
+  position: absolute;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 4px;
+  top: 5px;
+  left: 5px;
+}
+
+@for $i from 0 to 8 {
+  .square-$i {
+    animation: square-$i 1.5s cubic-bezier(0.19, 0.69, 0.4, 1) infinite alternate;
+  }
+
+  .circle-$i {
+    animation: circle-$i 1.5s cubic-bezier(0.19, 0.69, 0.4, 1) infinite alternate;
+  }
+
+  @keyframes square-$i {
+    0%,
+    20% {
+      transform: scale(0) translate(0, 0);
+    }
+
+    100% {
+      transform: scale(calc(random(0, 0.8) + 0.3)) translate(random(-180, 180, {round: true}) px, random(-180, 180, {round: true}) px) rotate(random(-360, 360, {round: true}) deg);
+    }
+  }
+
+  @keyframes circle-$i {
+    0%,
+    20% {
+      transform: scale(0) translate(0, 0);
+    }
+
+    100% {
+      transform: scale(calc(random(0, 0.8) + 0.3)) translate(random(-180, 180, {round: true}) px, random(-180, 180, {round: true}) px);
+    }
+  }
+}
+
+.boom {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  top: 185px;
+  left: 170px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  animation: text 1.5s cubic-bezier(0.19, 0.69, 0.4, 1) infinite alternate;
+}
+
+@keyframes text {
+  0%,
+  20% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(5);
+  }
+}

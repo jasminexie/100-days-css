@@ -7,8 +7,13 @@ module.exports = {
     require('postcss-at-rules-variables'),
     require('postcss-for'),
     require('postcss-simple-vars'),
+    require('postcss-random')({
+      noSeed: true
+    }),
     require('postcss-calc'),
     require('postcss-nested'),
-    require('postcss-color-function')
+    require('postcss-color-function')({
+      preserveCustomProps: false // delete color function with custom properties
+    })
   ]
 };
