@@ -1,0 +1,164 @@
+:root {
+  --frame: 400px;
+  --color-primary: #57d895;
+  --color-light: #fff;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: var(--frame);
+  width: var(--frame);
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  background: var(--color-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/* label */
+label[for="button"] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60px;
+  width: 260px;
+  border: 2px solid var(--color-light);
+  border-radius: 30px;
+  color: var(--color-light);
+  font-size: 20px;
+  line-height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+label[for="button"]:hover {
+  background: color(var(--color-primary) shade(15%));
+}
+
+input[type="checkbox"]:checked ~ label[for="button"] {
+  animation: button 2s ease-in-out;
+  animation-fill-mode: both;
+}
+
+input[type="checkbox"]:not(:checked) ~ label[for="button"] {
+  animation: button-reverse 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+
+/* img */
+label[for="button"] img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
+
+input[type="checkbox"]:checked ~ label[for="button"] img {
+  transition-delay: 1.8s;
+  opacity: 1;
+}
+
+input[type="checkbox"]:not(:checked) ~ label[for="button"] img {
+  transition-delay: 0s;
+  opacity: 0;
+}
+
+/* circle */
+svg.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 60px;
+  height: 60px;
+  fill: none;
+  stroke: var(--color-light);
+  stroke-width: 2.5px;
+  stroke-dashoffset: 183;
+  stroke-dasharray: 183;
+  pointer-events: none;
+}
+
+input[type="checkbox"]:checked ~ svg.circle {
+  animation: circle 1s linear 1s;
+  animation-fill-mode: both;
+}
+
+/* animations */
+@keyframes button {
+  0% {
+    width: 260px;
+    color: var(--color-light);
+    border-color: var(--color-light);
+  }
+
+  10% {
+    color: transparent;
+  }
+
+  50%,
+  75% {
+    width: 60px;
+    background: transparent;
+    color: transparent;
+    border-color: color(var(--color-primary) shade(15%));
+  }
+
+  90%,
+  100% {
+    width: 60px;
+    background: var(--color-light);
+    color: transparent;
+    border-color: var(--color-light);
+  }
+}
+
+@keyframes button-reverse {
+  0% {
+    width: 60px;
+    background: var(--color-light);
+    color: transparent;
+    border-color: var(--color-light);
+  }
+
+  100% {
+    width: 260px;
+    color: var(--color-light);
+    border-color: var(--color-light);
+    background: transparent;
+  }
+}
+
+@keyframes circle {
+  0% {
+    stroke-dashoffset: 183;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(1);
+    stroke: var(--color-light);
+  }
+
+  90%,
+  100% {
+    stroke-dashoffset: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+    stroke: transparent;
+  }
+}
