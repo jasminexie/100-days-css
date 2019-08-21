@@ -1,0 +1,105 @@
+:root {
+  --frame: 400px;
+  --color: #fff;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: var(--frame);
+  width: var(--frame);
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: 'Courier New', 'Courier', sans-serif;
+  background: linear-gradient(to top right, #7f7fd5, #86a8e7, #91eae4);
+}
+
+@define-mixin shadow {
+  filter: drop-shadow(0 0 13px rgba(0, 0, 0, 0.2));
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+}
+
+.one {
+  height: 100px;
+  width: 24px;
+  border-radius: 3px;
+  background: var(--color);
+
+  @mixin shadow;
+
+  display: block;
+  position: relative;
+  z-index: 3;
+}
+
+.one-thingy {
+  height: 40px;
+  width: 20px;
+  border-radius: 3px;
+  background: var(--color);
+
+  @mixin shadow;
+
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+}
+
+.zero {
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+  border: 24px solid var(--color);
+  border-radius: 50px;
+
+  @mixin shadow;
+
+  position: absolute;
+  top: 0;
+}
+
+.zero-1 {
+  left: 17px;
+  z-index: 2;
+}
+
+.zero-2 {
+  left: 100px;
+  z-index: 1;
+}
+
+.big,
+.small {
+  color: var(--color);
+  text-transform: uppercase;
+
+  @mixin shadow;
+}
+
+.big {
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 60px;
+  padding: 0;
+  margin: 6px 0 0 0;
+}
+
+.small {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 23px;
+  padding: 0;
+  letter-spacing: 1px;
+}
