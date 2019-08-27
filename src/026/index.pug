@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      input#r1(type="radio" name="card" checked)
+      .card
+        .number
+        .number-inner 1
+        .text
+          .title The couch
+          p If you want to grow, get outside your comfort zone
+        label(for="r2") OK
+      input#r2(type="radio" name="card")
+      .card
+        .number
+        .number-inner 2
+        .text
+          .title Failing is learning
+          p Pick yourself up, dust yourself off, and start again.
+        label(for="r3") OK
+      input#r3(type="radio" name="card")
+      .card
+        .number
+        .number-inner 3
+        .text
+          .title Flowers and rainbows
+          p Always be yourself, unless you can be a unicorn.
+        label(for="r1") OK
