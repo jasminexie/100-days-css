@@ -211,7 +211,11 @@
     }
 
     100% {
-      transform: scale(calc(random(0, 0.8) + 0.3)) translate(random(-180, 180, {round: true}) px, random(-180, 180, {round: true}) px);
+      /* stylelint-disable */
+      transform:
+        scale(calc(random(0, 0.8) + 0.3))
+        translate(random(-180, 180, {round: true})px, random(-180, 180, {round: true})px);
+     /* stylelint-enable */
     }
   }
 }
