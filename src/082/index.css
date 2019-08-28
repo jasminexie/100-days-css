@@ -6,13 +6,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  height: var(--frame);
   width: var(--frame);
-  transform: translate(-50%, -50%);
-  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  height: var(--frame);
   background: linear-gradient(to right, #4a569d, #dc2424);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
 input[type="checkbox"] {
@@ -20,36 +20,36 @@ input[type="checkbox"] {
 }
 
 label {
-  width: 100px;
-  height: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100px;
+  height: 50px;
   border-radius: 25px;
+  box-shadow: 4px 8px 12px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
   transform: translate(-50%, -50%) rotateX(0);
   transform-style: preserve-3d;
-  transition: all 0.5s ease-in-out;
-  box-shadow: 4px 8px 12px 0 rgba(0, 0, 0, 0.1);
-  cursor: pointer;
 }
 
 input[type="checkbox"]:checked + label {
-  transform: translate(-50%, -50%) rotateX(180deg);
   box-shadow: 4px -8px 12px 0 rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%) rotateX(180deg);
 }
 
 .send,
 .done {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
-  border-radius: 25px;
+  right: 0;
+  left: 0;
   border: 2px solid #fff;
-  text-transform: uppercase;
+  border-radius: 25px;
   line-height: 46px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .send {

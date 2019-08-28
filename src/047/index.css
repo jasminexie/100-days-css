@@ -5,13 +5,13 @@ $size: 20;
   position: absolute;
   top: 50%;
   left: 50%;
-  height: $frame;
   width: $frame;
-  transform: translate(-50%, -50%);
-  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  color: #fff;
+  height: $frame;
   background: #de4738;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  color: #fff;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
 input {
@@ -23,9 +23,9 @@ label {
   float: left;
   width: calc($frame/$size);
   height: calc($frame/$size);
-  box-sizing: border-box;
   border: 1px solid #e24e3f;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 label:hover {

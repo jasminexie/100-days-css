@@ -6,63 +6,63 @@ $color: #fffbd5;
   position: absolute;
   top: 50%;
   left: 50%;
-  height: $frame;
   width: $frame;
-  transform: translate(-50%, -50%);
+  height: $frame;
+  background: #f27121;
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  background: #f27121;
+  transform: translate(-50%, -50%);
 }
 
 .grid {
-  float: left;
   position: relative;
+  float: left;
   width: calc($frame/$size);
   height: calc($frame/$size);
-  box-sizing: border-box;
   background: none;
   opacity: 0;
-  z-index: 1;
   cursor: pointer;
+  z-index: 1;
+  box-sizing: border-box;
 }
 
 .dot {
   position: absolute;
-  width: 20px;
-  height: 20px;
   top: -10px;
   left: -10px;
   padding: 3px;
-  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
   background: $color;
   border-radius: 50%;
-  transform: translate3d(200px, 200px, 0);
   transition: all 0.3s ease-out;
   cursor: pointer;
+  box-sizing: border-box;
+  transform: translate3d(200px, 200px, 0);
 
   &::after {
-    content: '';
-    width: 20px;
-    height: 20px;
+    position: absolute;
     top: 0;
     left: 0;
-    position: absolute;
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     border: 1.5px solid $color;
-    box-sizing: border-box;
+    border-radius: 50%;
     animation: pulsate 1.5s ease-in-out infinite;
+    box-sizing: border-box;
+    content: '';
   }
 }
 
 @keyframes pulsate {
   0% {
-    transform: scale(0.8);
     opacity: 1;
+    transform: scale(0.8);
   }
 
   100% {
-    transform: scale(2.4);
     opacity: 0;
+    transform: scale(2.4);
   }
 }
 

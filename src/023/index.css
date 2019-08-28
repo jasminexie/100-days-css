@@ -7,58 +7,58 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  height: var(--frame);
   width: var(--frame);
-  transform: translate(-50%, -50%);
-  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  height: var(--frame);
   background: var(--background);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
 div {
   color: #fff;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .wrapper {
   position: absolute;
-  width: 100%;
   top: 140px;
+  width: 100%;
 }
 
 .small {
+  height: 36px;
   font-size: 30px;
   font-weight: 200;
-  letter-spacing: 2px;
-  height: 36px;
   line-height: 36px;
+  letter-spacing: 2px;
 }
 
 .big {
+  height: 50px;
   font-size: 50px;
   font-weight: 500;
-  height: 50px;
   line-height: 50px;
 }
 
 @define-mixin bracket {
-  background: white;
-  width: 4px;
-  height: 70px;
   position: absolute;
   top: 26px;
+  width: 4px;
+  height: 70px;
+  background: white;
 }
 
 @define-mixin bracket-curve {
-  content: '';
   position: absolute;
-  height: 4px;
   width: 25px;
+  height: 4px;
   background: #fff;
   animation: expand-x 0.2s linear 2s;
   animation-fill-mode: both;
+  content: '';
 }
 
 .left-bracket {
@@ -114,16 +114,16 @@ div {
 
 .hide.top {
   top: 0;
-  transform-origin: 50% 0;
   animation: expand-y 0.5s linear 1.7s;
   animation-fill-mode: both;
+  transform-origin: 50% 0;
 }
 
 .hide.bottom {
   bottom: 0;
-  transform-origin: 50% 100%;
   animation: expand-y 0.5s linear 1.7s;
   animation-fill-mode: both;
+  transform-origin: 50% 100%;
 }
 
 #collect {
@@ -137,53 +137,53 @@ div {
 }
 
 .circle {
+  position: absolute;
+  top: 34px;
+  left: 170px;
   width: 60px;
   height: 60px;
   background: #fff;
   border-radius: 50%;
-  position: absolute;
-  z-index: 10;
-  top: 34px;
-  left: 170px;
-  transform-origin: 50% 50%;
   animation: bounce 0.8s ease-in-out;
+  z-index: 10;
   animation-fill-mode: both;
+  transform-origin: 50% 50%;
 }
 
 .line {
+  position: absolute;
+  top: 60px;
+  left: 50px;
   width: 300px;
   height: 4px;
   background: #fff;
-  position: absolute;
-  z-index: 5;
-  top: 60px;
-  left: 50px;
-  transform-origin: 50% 50%;
   animation: lines 1s ease-in-out 0.7s;
+  z-index: 5;
   animation-fill-mode: both;
+  transform-origin: 50% 50%;
 }
 
 @keyframes left-in {
   0% {
-    transform: translateX(-20px);
     opacity: 0;
+    transform: translateX(-20px);
   }
 
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes right-in {
   0% {
-    transform: translateX(20px);
     opacity: 0;
+    transform: translateX(20px);
   }
 
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
 }
 

@@ -6,13 +6,13 @@ $radius: 30px;
   position: absolute;
   top: 50%;
   left: 50%;
-  height: $frame;
   width: $frame;
-  transform: translate(-50%, -50%);
-  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  height: $frame;
   background: linear-gradient(to bottom, #093637, #44a08d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
 @for $ring from 0 to 9 {

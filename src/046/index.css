@@ -6,13 +6,13 @@ $spinnerSize: 200px;
   position: absolute;
   top: 50%;
   left: 50%;
-  height: $frameHeight;
   width: $frameWidth;
-  transform: translate(-50%, -50%);
+  height: $frameHeight;
   background: linear-gradient(to bottom right, #43c6ac, #f8ffae);
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
-  overflow: hidden;
   color: #fff;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
 .ring {
@@ -47,9 +47,9 @@ $spinnerSize: 200px;
   $ringDeg: calc(360deg / 12 * $i);
 
   .ring-$i {
+    animation: inout-$i 6s ease-in-out alternate infinite;
     transform: translate(-50%, -50%) rotate($ringDeg);
     transform-origin: center;
-    animation: inout-$i 6s ease-in-out alternate infinite;
   }
 
   .ring-$i .dot {
