@@ -196,7 +196,10 @@
 
     100% {
       /* stylelint-disable */
-      transform: scale(calc(random(0, 0.8) + 0.3)) translate(random(-180, 180, {round: true}) px, random(-180, 180, {round: true}) px) rotate(random(-360, 360, {round: true}) deg);
+      transform:
+        scale(calc(random(0, 0.8) + 0.3))
+        translate(random(-180, 180, {round: true})px, random(-180, 180, {round: true})px)
+        rotate(random(-360, 360, {round: true})deg);
       /* stylelint-enable */
     }
   }
