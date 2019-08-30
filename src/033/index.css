@@ -1,0 +1,73 @@
+:root {
+  --frame: 400px;
+  --sky-color: #75c1e8;
+  --sun-color: #ffd93c;
+  --duration: 60s;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: var(--sky-color);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.sun {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sun-color);
+  animation: moveRight var(--duration) linear infinite alternate both;
+}
+
+.cloud-big,
+.cloud-medium,
+.cloud-small {
+  position: absolute;
+  animation: moveLeft var(--duration) linear infinite alternate both;
+  z-index: 1;
+}
+
+.cloud-big {
+  top: 118px;
+  left: 280px;
+}
+
+.cloud-medium {
+  top: 89px;
+  left: 50px;
+}
+
+.cloud-small {
+  top: 74px;
+  left: 195px;
+}
+
+@keyframes moveLeft {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-300%);
+  }
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
