@@ -11,10 +11,7 @@ function _validate(name) {
   if (isNaN(day)) {
     return false;
   }
-  if (day < 0 && day > 100) {
-    return false;
-  }
-  return true;
+  return !(day < 0 && day > 100);
 }
 
 function scaffold(day, dir) {
