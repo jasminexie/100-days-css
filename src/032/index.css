@@ -1,0 +1,158 @@
+:root {
+  --frame: 400px;
+  --color-red: #e26e6e;
+  --color-green: #8ed273;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: linear-gradient(to top right, #d2592a 0%, #fdb03a 100%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  width: 130px;
+  height: 40px;
+  background: white;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+#plus,
+#minus {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  flex: none;
+}
+
+#plus::before,
+#plus::after,
+#minus::before {
+  position: absolute;
+  content: '';
+}
+
+#minus::before {
+  top: 15px;
+  left: 7px;
+  width: 18px;
+  height: 2px;
+  background: var(--color-red);
+}
+
+#plus::before {
+  top: 15px;
+  left: 7px;
+  width: 18px;
+  height: 2px;
+  background: var(--color-green);
+}
+
+#plus::after {
+  top: 7px;
+  left: 15px;
+  width: 2px;
+  height: 18px;
+  background: var(--color-green);
+}
+
+#minus:hover {
+  background: var(--color-red);
+}
+
+#minus:hover::before {
+  background: #fff;
+}
+
+#plus:hover {
+  background: var(--color-green);
+}
+
+#plus:hover::before,
+#plus:hover::after {
+  background: #fff;
+}
+
+#number {
+  position: relative;
+  height: 40px;
+  color: #6a85a0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+  text-align: center;
+  overflow: hidden;
+  flex: 1;
+}
+
+#number div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.fade-in__increment {
+  opacity: 1;
+  animation: fadeIn 0.3s ease-out 0.15s backwards;
+  transform: scale(1);
+}
+
+.fade-out__increment {
+  opacity: 0;
+  animation: fadeOut 0.3s ease-in;
+  transform: scale(1.4);
+}
+
+.fade-in__decrement {
+  opacity: 1;
+  animation: fadeOut 0.3s ease-out 0.15s reverse backwards;
+  transform: scale(1);
+}
+
+.fade-out__decrement {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out reverse backwards;
+  transform: scale(0.6);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
