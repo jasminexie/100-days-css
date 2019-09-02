@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    style
+      include index.css
+      include ./components/skeleton-text.css
+    link(
+      rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    )
+
+  body
+    .frame
+      .panel
+        .tab
+        input#tab-1(type="radio" name="radio" checked)
+        label.tab__icon(for="tab-1")
+          span.fa.fa-eye
+        input#tab-2(type="radio" name="radio")
+        label.tab__icon(for="tab-2")
+          span.fa.fa-comments
+        input#tab-3(type="radio" name="radio")
+        label.tab__icon(for="tab-3")
+          span.fa.fa-bell
+        input#tab-4(type="radio" name="radio")
+        label.tab__icon(for="tab-4")
+          span.fa.fa-cog
+        label.tab__icon.tab__icon-right
+          span.fa.fa-search
+        section
+          .block-1
+            h1 Dashboard
+            include ./components/skeleton-text
+          .block-2
+            h1 Comments
+            include ./components/skeleton-text
+          .block-3
+            h1 Notifications
+            include ./components/skeleton-text
+          .block-4
+            h1 Settings
+            include ./components/skeleton-text

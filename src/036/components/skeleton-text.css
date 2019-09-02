@@ -1,0 +1,54 @@
+:root {
+  --color-skeleton-text: #E9E9E9;
+}
+
+.p1, .p2 {
+  margin: 17px 0;
+}
+
+.line {
+  display: block;
+  height: 4px;
+  background: var(--color-skeleton-text);
+  margin: 6px 0;
+}
+
+.p1 .line:nth-child(1) {
+  width: 250px;
+}
+
+.p1 .line:nth-child(2) {
+  width: 270px;
+}
+
+.p1 .line:nth-child(3) {
+  width: 235px;
+}
+
+.p1 .line:nth-child(4) {
+  width: 260px;
+}
+
+.p1 .line:nth-child(5) {
+  width: 53px;
+}
+
+.p2 .line:nth-child(1) {
+  width: 262px;
+}
+
+.p2 .line:nth-child(2) {
+  width: 234px;
+}
+
+.p2 .line:nth-child(3) {
+  width: 246px;
+}
+
+.p2 .line:nth-child(4) {
+  width: 260px;
+}
+
+.p2 .line:nth-child(5) {
+  width: 144px;
+}
