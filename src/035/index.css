@@ -1,0 +1,55 @@
+:root {
+  --frame: 400px;
+  --color-background: #1bbe9e;
+  --color-spinner-bg: #12836d;
+  --color-spinner-active: #fff;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: var(--color-background);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+circle {
+  fill: none;
+  stroke-width: 4;
+}
+
+.loader {
+  animation: loading 4s linear infinite;
+  stroke: var(--color-spinner-active);
+  stroke-dasharray: 288;
+  stroke-dashoffset: 288;
+  transform-origin: 50% 50%;
+}
+
+.bg {
+  stroke: var(--color-spinner-bg);
+}
+
+@keyframes loading {
+  0% {
+    stroke-dashoffset: 288;
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    stroke-dashoffset: -288;
+    transform: rotate(270deg);
+  }
+}
