@@ -1,0 +1,100 @@
+:root {
+  --frame: 400px;
+  --color-light: #fff;
+  --color-1: #9b59b6;
+  --color-2: #3498db;
+  --color-3: #1abc9c;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+label {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--color-light);
+  border-radius: 50%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+label:not(:first-child) {
+  margin-left: 10px;
+}
+
+.active {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: var(--color-light);
+  transition: all 1s ease;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  background:
+    linear-gradient(
+      to right,
+      var(--color-1) 0%,
+      var(--color-1) 33.33%,
+      var(--color-2) 33.34%,
+      var(--color-2) 66.66%,
+      var(--color-3) 66.67%,
+      var(--color-3) 100%
+    );
+  transition: all 1s ease;
+  z-index: 1;
+}
+
+input#r-1:checked ~ .container .active {
+  transform: translateX(0);
+}
+
+input#r-2:checked ~ .container .active {
+  transform: translateX(60px);
+}
+
+input#r-3:checked ~ .container .active {
+  transform: translateX(120px);
+}
+
+input#r-1:checked ~ .bg {
+  transform: translateX(0);
+}
+
+input#r-2:checked ~ .bg {
+  transform: translateX(-400px);
+}
+
+input#r-3:checked ~ .bg {
+  transform: translateX(-800px);
+}
