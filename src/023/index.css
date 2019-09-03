@@ -1,6 +1,7 @@
 :root {
   --frame: 400px;
-  --background: #e16d6c;
+  --background: pink;
+  --bracket-position: 50px;
 }
 
 .frame {
@@ -64,7 +65,7 @@ div {
 .left-bracket {
   @mixin bracket;
 
-  left: 50px;
+  left: var(--bracket-position);
 }
 
 .left-bracket::before {
@@ -86,7 +87,7 @@ div {
 .right-bracket {
   @mixin bracket;
 
-  right: 50px;
+  right: var(--bracket-position);
 }
 
 .right-bracket::before {

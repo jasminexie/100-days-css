@@ -1,0 +1,244 @@
+:root {
+  --frame: 400px;
+  --size-img: 194px;
+  --color-primary: #ec6565;
+  --color-light: #fff;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/* plus sign */
+
+.plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px;
+  width: 50px;
+  height: 50px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  transform: scale(2);
+}
+
+.plus::before {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  width: 2px;
+  height: 14px;
+  background: var(--color-light);
+  transition: all 0.5s ease;
+  content: '';
+}
+
+.plus::after {
+  position: absolute;
+  top: 24px;
+  left: 18px;
+  width: 14px;
+  height: 2px;
+  background: var(--color-light);
+  transition: all 0.5s ease;
+  content: '';
+}
+
+input[type="checkbox"]:not(:checked) ~ .container:hover .plus {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* profiles container */
+
+.container {
+  position: relative;
+  float: left;
+  padding: calc((50% - var(--size-img)) / 2);
+  width: 50%;
+  height: 50%;
+  cursor: pointer;
+}
+
+.container img {
+  width: var(--size-img);
+  height: var(--size-img);
+}
+
+.container .overlay {
+  position: absolute;
+  top: calc((100% - var(--size-img)) / 2);
+  left: calc((100% - var(--size-img)) / 2);
+  width: var(--size-img);
+  height: var(--size-img);
+  background: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.container:hover .overlay {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+/* profile details */
+
+.profile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.profile .avatar {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--color-light);
+  border-radius: 50%;
+  box-shadow: 4px 6px 15px 0 rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+
+.profile .avatar img {
+  width: 96px;
+  border-radius: 50%;
+}
+
+.profile .info {
+  display: flex;
+  width: 100%;
+  background: var(--color-primary);
+  flex: 1;
+  flex-direction: column-reverse;
+}
+
+.profile .info .btns {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px 50px 100px;
+}
+
+.profile .info .btns span {
+  display: block;
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--color-light);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--color-light);
+  line-height: 41px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.profile .info .btns span:hover {
+  background: var(--color-light);
+  box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.3);
+  color: var(--color-primary);
+}
+
+.profile .info .username {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-light);
+  user-select: none;
+}
+
+.profile .close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  left: unset;
+  opacity: 1;
+  z-index: 20;
+  transform: scale(1) rotate(45deg);
+}
+
+.profile .close:hover {
+  background: var(--color-light);
+}
+
+.profile .close:hover::before,
+.profile .close:hover::after {
+  background: var(--color-primary);
+}
+
+/* profile transitions */
+
+input[type="checkbox"]:not(:checked) ~ .profile {
+  visibility: hidden;
+  transition: all 1s ease-in-out;
+}
+
+input[type="checkbox"]:checked ~ .profile {
+  visibility: visible;
+}
+
+input[type="checkbox"]:not(:checked) ~ .profile .header {
+  transition: all 1s ease-in-out 0.5s;
+  transform: translateY(-180px);
+}
+
+input[type="checkbox"]:checked ~ .profile .header {
+  transition: all 1s ease-in-out;
+  transform: translateY(0);
+}
+
+input[type="checkbox"]:not(:checked) ~ .profile .info {
+  transition: all 1s ease-in-out 0.5s;
+  transform: translateY(220px);
+}
+
+input[type="checkbox"]:checked ~ .profile .info {
+  transition: all 1s ease-in-out;
+  transform: translateY(0);
+}
+
+input[type="checkbox"]:not(:checked) ~ .profile .avatar {
+  transition: all 1s ease-in-out;
+  transform: translateY(-240px);
+}
+
+input[type="checkbox"]:checked ~ .profile .avatar {
+  transition: all 1s ease-in-out 0.2s;
+  transform: translateY(0);
+}
+
+input[type="checkbox"]:not(:checked) ~ .profile .close {
+  transition: transform 1s ease-in-out 0.2s, background 0.3s ease;
+  transform: translateY(-80px) scale(1) rotate(45deg);
+}
+
+input[type="checkbox"]:checked ~ .profile .close {
+  transition: transform 1s ease-in-out, background 0.3s ease;
+  transform: translateY(0) scale(1) rotate(45deg);
+}
