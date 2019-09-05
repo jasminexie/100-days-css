@@ -1,0 +1,195 @@
+:root {
+  --frame: 400px;
+  --color-primary: #4a627a;
+  --color-light: #fff;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: var(--color-primary);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Open Sans", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.line-up,
+.line-down {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 4px;
+  background: var(--color-light);
+}
+
+.line-up {
+  transform: translate3d(-50%, -14px, 0);
+}
+
+.line-down {
+  transform: translate3d(-50%, 10px, 0);
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 300px;
+  height: 60px;
+  cursor: pointer;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.menu label {
+  transition: color 0.5s ease;
+  color: var(--color-light);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  flex: 1;
+  text-transform: uppercase;
+}
+
+.menu label:hover {
+  color: color(var(--color-light) a(50%));
+}
+
+/* animations */
+
+input[type=checkbox]:checked ~ .line-up {
+  animation: expand-up 1s ease both;
+}
+
+input[type=checkbox]:checked ~ .line-down {
+  animation: expand-down 1s ease both;
+}
+
+input[type=checkbox]:not(:checked) ~ .line-up {
+  animation: retract-up 1s ease both;
+}
+
+input[type=checkbox]:not(:checked) ~ .line-down {
+  animation: retract-down 1s ease both;
+}
+
+input[type=checkbox]:checked ~ .menu {
+  animation: expand-menu 1s ease both;
+}
+
+input[type=checkbox]:not(:checked) ~ .menu {
+  animation: retract-menu 1s ease both;
+}
+
+@keyframes expand-up {
+  0% {
+    transform: translate3d(-50%, -14px, 0);
+  }
+
+  20% {
+    transform: translate3d(-50%, -10px, 0);
+  }
+
+  60% {
+    transform: translate3d(-50%, -32px, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, -32px, 0) scale(6, 0.5);
+  }
+}
+
+@keyframes expand-down {
+  0% {
+    transform: translate3d(-50%, 10px, 0);
+  }
+
+  20% {
+    transform: translate3d(-50%, 6px, 0);
+  }
+
+  60% {
+    transform: translate3d(-50%, 30px, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 30px, 0) scale(6, 0.5);
+  }
+}
+
+@keyframes retract-up {
+  0% {
+    transform: translate3d(-50%, -32px, 0) scale(6, 0.5);
+  }
+
+  60% {
+    transform: translate3d(-50%, -32px, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, -14px, 0);
+  }
+}
+
+@keyframes retract-down {
+  0% {
+    transform: translate3d(-50%, 30px, 0) scale(6, 0.5);
+  }
+
+  60% {
+    transform: translate3d(-50%, 30px, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 10px, 0);
+  }
+}
+
+@keyframes expand-menu {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.18, 0.5);
+  }
+
+  60% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+}
+
+@keyframes retract-menu {
+  0% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+
+  60% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.18, 0.5);
+  }
+}
