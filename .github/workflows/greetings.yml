@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Hi! You are welcome to make a PR for any issues you may have.'
+        pr-message: 'Thank you for your PR. Please rebase against the master branch and ensure there are no conflicts. I'll get back to you ASAP!'
