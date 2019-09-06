@@ -1,0 +1,158 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: #3faf82;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 52px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  width: 80px;
+  height: 8px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.line-1 {
+  top: 0;
+  z-index: 1;
+}
+
+.line-2 {
+  top: 22px;
+}
+
+.line-3 {
+  bottom: 0;
+  z-index: 1;
+}
+
+input[type="checkbox"]:checked ~ .menu .line-1 {
+  animation: line-1 0.6s ease-in-out both;
+}
+
+input[type="checkbox"]:checked ~ .menu .line-2 {
+  animation: line-2 0.6s ease-in-out both;
+}
+
+input[type="checkbox"]:checked ~ .menu .line-3 {
+  animation: line-3 0.6s ease-in-out both;
+}
+
+input[type="checkbox"]:not(:checked) ~ .menu .line-1 {
+  animation: line-1-out 0.6s ease-in-out both;
+}
+
+input[type="checkbox"]:not(:checked) ~ .menu .line-2 {
+  animation: line-2-out 0.6s ease-in-out both;
+}
+
+input[type="checkbox"]:not(:checked) ~ .menu .line-3 {
+  animation: line-3-out 0.6s ease-in-out both;
+}
+
+@keyframes line-1 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 22px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 22px, 0) rotate(135deg);
+  }
+}
+
+@keyframes line-2 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes line-3 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -22px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -22px, 0) rotate(45deg);
+  }
+}
+
+@keyframes line-1-out {
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 22px, 0);
+  }
+
+  0% {
+    transform: translate3d(0, 22px, 0) rotate(135deg);
+  }
+}
+
+@keyframes line-2-out {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes line-3-out {
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -22px, 0);
+  }
+
+  0% {
+    transform: translate3d(0, -22px, 0) rotate(45deg);
+  }
+}
