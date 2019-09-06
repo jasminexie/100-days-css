@@ -1,0 +1,95 @@
+:root {
+  --frame: 400px;
+  --margin: 2px;
+  --n: 3;
+  --size: calc((var(--frame) - var(--margin) * (var(--n) * 2 - 2)) / var(--n));
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  position: relative;
+  top: calc(-1 * var(--margin));
+  left: calc(-1 * var(--margin));
+  width: calc(var(--frame) + 2 * var(--margin));
+  height: calc(var(--frame) + 2 * var(--margin));
+}
+
+.pic {
+  float: left;
+  margin: var(--margin);
+  width: var(--size);
+  height: var(--size);
+  background: #000;
+  transition: all 0.5s ease;
+}
+
+img {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  transition: z-index 1ms ease 0.5s, transform 0.5s ease, opacity 0.3s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.pic img.active {
+  transition: z-index 1ms ease, transform 0.5s ease, opacity 0.3s ease;
+  z-index: 2;
+
+  /* hard coded */
+  transform: scale(3.0615);
+}
+
+.pic img.inactive {
+  opacity: 0.5;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+  z-index: 1;
+  transform: scale(1);
+}
+
+.pic:nth-child(1) img {
+  transform-origin: 0 0;
+}
+
+.pic:nth-child(2) img {
+  transform-origin: 50% 0;
+}
+
+.pic:nth-child(3) img {
+  transform-origin: 100% 0;
+}
+
+.pic:nth-child(4) img {
+  transform-origin: 0 50%;
+}
+
+.pic:nth-child(5) img {
+  transform-origin: 50% 50%;
+}
+
+.pic:nth-child(6) img {
+  transform-origin: 100% 50%;
+}
+
+.pic:nth-child(7) img {
+  transform-origin: 0 100%;
+}
+
+.pic:nth-child(8) img {
+  transform-origin: 50% 100%;
+}
+
+.pic:nth-child(9) img {
+  transform-origin: 100% 100%;
+}
