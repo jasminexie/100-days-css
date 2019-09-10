@@ -1,0 +1,63 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: #404556;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 133px;
+  text-align: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+
+#bulb {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  z-index: 2;
+  fill: #fff35c;
+  flex: auto;
+}
+
+#bulb:hover {
+  fill: #8c8f99;
+}
+
+#base {
+  fill: #e5e5e5;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 76px;
+  height: 76px;
+  background: #fff35c;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 10px #fff35c;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-50%);
+}
+
+#bulb:hover ~ .glow {
+  opacity: 0;
+}
