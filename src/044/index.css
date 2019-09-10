@@ -34,7 +34,7 @@
     width: calc(10px * $i);
     height: calc(10px * $i);
     border: 1px solid rgba($color, $color, $color);
-    animation: squares 2s ease-in-out calc($i / 30) s alternate infinite;
+    animation: squares 2s ease-in-out calc($i / 30 * 1s) alternate infinite;
   }
 }
 
