@@ -1,0 +1,107 @@
+:root {
+  --frame: 400px;
+  --color-primary: #48c;
+  --color-secondary: #48c;
+  --color-light: #fff;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: var(--color-primary);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+}
+
+.shield {
+  position: absolute;
+  width: 80px;
+  height: 100px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.shield .left,
+.shield .right {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 80px;
+  height: 100px;
+  border-bottom: 50px solid transparent;
+  border-left: 0 solid var(--color-light);
+  border-right: 80px solid var(--color-light);
+  border-top: 50px solid transparent;
+}
+
+.shield .left::after,
+.shield .right::after {
+  position: absolute;
+  top: -35px;
+  left: -20px;
+  display: block;
+  width: 70px;
+  height: 70px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  content: '';
+}
+
+.shield.two .left,
+.shield.two .right {
+  border-left: 0 solid var(--color-secondary);
+  border-right: 80px solid var(--color-secondary);
+}
+
+.shield.two .left::after,
+.shield.two .right::after {
+  background: var(--color-light);
+}
+
+.shield.one .right,
+.shield.two .right {
+  left: 40px;
+  transform: scale(-1);
+}
+
+input[type="checkbox"]:not(:checked) ~ .shield.one {
+  transition: all 0.5s ease-in 0.1s;
+  transform: scale(1);
+}
+
+input[type="checkbox"]:not(:checked) ~ .shield.two {
+  transition: all 0.5s ease-in;
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked ~ .shield.one {
+  transition: all 0.5s ease-in;
+  transform: scale(10);
+}
+
+input[type="checkbox"]:checked ~ .shield.two {
+  transition: all 0.5s ease-in 0.1s;
+  transform: scale(1);
+}
