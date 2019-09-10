@@ -43,16 +43,16 @@
 
 @for $i from 1 to 300 {
   #star-$i {
-    top: random(0, 280) px;
-    left: random(0, 280) px;
-    animation: random(2, 4) s flicker random(-2, -0) s ease-in-out alternate infinite;
+    top: random(0, 280)px;
+    left: random(0, 280)px;
+    animation: random(2, 4)s flicker random(-2, -0)s ease-in-out alternate infinite;
   }
 }
 
 @for $i from 1 to 6 {
   #shooting-star-$i {
-    top: random(20, 100) px;
-    animation: random(10, 15) s shooting-star random(0, 15) s linear infinite;
+    top: random(20, 100)px;
+    animation: random(10, 15)s shooting-star random(0, 15)s linear infinite;
   }
 }
 
