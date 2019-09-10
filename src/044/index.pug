@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      - var x = 20
+        while x > 0
+          div(class=`square square-${x}`)
+          - x -= 1;

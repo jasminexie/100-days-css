@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      .circle
+        - var x = 300
+          while x > 0
+            .star(id=`star-${x}`)
+            - x -= 1
+        - var y = 6
+          while y > 0
+            .shooting-star(id=`shooting-star-${y}`)
+            - y -= 1

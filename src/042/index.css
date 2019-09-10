@@ -1,0 +1,78 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #1d4253 0%, #6bb5c4 100%);
+}
+
+.star {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: #fff;
+}
+
+.shooting-star {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, white);
+  border-radius: 50% 2px 2px 50%;
+  transform: rotate(20deg);
+}
+
+@for $i from 1 to 300 {
+  #star-$i {
+    top: random(0, 280) px;
+    left: random(0, 280) px;
+    animation: random(2, 4) s flicker random(-2, -0) s ease-in-out alternate infinite;
+  }
+}
+
+@for $i from 1 to 6 {
+  #shooting-star-$i {
+    top: random(20, 100) px;
+    animation: random(10, 15) s shooting-star random(0, 15) s linear infinite;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(20deg);
+  }
+
+  10%,
+  100% {
+    transform: translate3d(451px, 164px, 0) rotate(20deg);
+  }
+}
