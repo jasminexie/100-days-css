@@ -1,0 +1,70 @@
+:root {
+  --frame: 400px;
+  --color-primary: #ff69b4;
+  --color-light: #fff;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: var(--color-primary);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 60px;
+  background: var(--color-primary);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 60px;
+  color: var(--color-light);
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#border {
+  transition: all 0.8s ease-in-out;
+  fill: transparent;
+  stroke: color(var(--color-primary) tint(50%));
+  stroke-width: 1px;
+}
+
+#bling {
+  transition: all 0.8s ease-in-out;
+  fill: none;
+  stroke: var(--color-light);
+  stroke-dasharray: 40px 480px;
+  stroke-dashoffset: 40px;
+  stroke-width: 1px;
+}
+
+.button:hover #border {
+  fill: color(var(--color-primary) shade(8%));
+}
+
+.button:hover #bling {
+  stroke-dasharray: 40px 480px;
+  stroke-dashoffset: -480px;
+}
