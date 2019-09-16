@@ -1,0 +1,281 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: rgb(189, 22, 176);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.flower {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  animation: flower 7s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+}
+
+.petal {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px 100px;
+  box-shadow: inset 2px 2px 4px 0 rgba(255, 255, 255, 0.5);
+  transform-origin: 100% 100%;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 8px 0 rgba(189, 22, 176, 0.5);
+  animation: circle 7s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+}
+
+@for $i from 1 to 15 {
+  $angle: calc(360deg * $i / 15);
+
+  .petal-$i {
+    animation: petal-$i 7s ease-in-out infinite;
+    transform: rotate($angle);
+  }
+}
+
+.flower:hover,
+.flower:hover .petal,
+.flower:hover .circle {
+  animation-play-state: paused;
+}
+
+@keyframes flower {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  60% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  30% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  33%,
+  60% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  65% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+}
+
+@keyframes petal-1 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 1 / 15)) scale(0.3);
+  }
+
+  13%,
+  65.66667% {
+    transform: rotate(calc(360deg * 1 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-2 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 2 / 15)) scale(0.3);
+  }
+
+  16%,
+  66.33333% {
+    transform: rotate(calc(360deg * 2 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-3 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 3 / 15)) scale(0.3);
+  }
+
+  19%,
+  67% {
+    transform: rotate(calc(360deg * 3 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-4 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 4 / 15)) scale(0.3);
+  }
+
+  21%,
+  67.66667% {
+    transform: rotate(calc(360deg * 4 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-5 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 5 / 15)) scale(0.3);
+  }
+
+  24%,
+  68.33333% {
+    transform: rotate(calc(360deg * 5 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-6 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 6 / 15)) scale(0.3);
+  }
+
+  27%,
+  69% {
+    transform: rotate(calc(360deg * 6 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-7 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 7 / 15)) scale(0.3);
+  }
+
+  30%,
+  69.66667% {
+    transform: rotate(calc(360deg * 7 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-8 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 8 / 15)) scale(0.3);
+  }
+
+  33%,
+  70.33333% {
+    transform: rotate(calc(360deg * 8 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-9 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 9 / 15)) scale(0.3);
+  }
+
+  36%,
+  71% {
+    transform: rotate(calc(360deg * 9 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-10 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 10 / 15)) scale(0.3);
+  }
+
+  39%,
+  71.66667% {
+    transform: rotate(calc(360deg * 10 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-11 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 11 / 15)) scale(0.3);
+  }
+
+  42%,
+  72.33333% {
+    transform: rotate(calc(360deg * 11 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-12 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 12 / 15)) scale(0.3);
+  }
+
+  45%,
+  73% {
+    transform: rotate(calc(360deg * 12 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-13 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 13 / 15)) scale(0.3);
+  }
+
+  48%,
+  73.33333% {
+    transform: rotate(calc(360deg * 13 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-14 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 14 / 15)) scale(0.3);
+  }
+
+  51%,
+  74% {
+    transform: rotate(calc(360deg * 14 / 15)) scale(1);
+  }
+}
+
+@keyframes petal-15 {
+  0%,
+  100% {
+    transform: rotate(calc(360deg * 15 / 15)) scale(0.3);
+  }
+
+  54%,
+  74.66667% {
+    transform: rotate(calc(360deg * 15 / 15)) scale(1);
+  }
+}
