@@ -1,0 +1,114 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background-size: cover;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: url("./assets/slice-image-1.jpg");
+  transform: translate(-50%, -50%);
+}
+
+.frame::before,
+.frame::after {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  clip-path:
+    polygon(
+      0 0,
+      50px 0,
+      50px 100%,
+      0 100%,
+      0 0,
+      100px 0,
+      150px 0,
+      150px 100%,
+      100px 100%,
+      100px 0,
+      200px 0,
+      250px 0,
+      250px 100%,
+      200px 100%,
+      200px 0,
+      300px 0,
+      350px 0,
+      350px 100%,
+      300px 100%,
+      300px 0
+    );
+  content: '';
+}
+
+.frame::before {
+  top: -40px;
+  left: 0;
+  background-image: url("./assets/slice-image-2.jpg");
+}
+
+.frame::after {
+  top: 40px;
+  left: 49.9999px;
+  background-position: -50px 0;
+  background-image: url("./assets/slice-image-2.jpg");
+}
+
+.frame:hover::before {
+  opacity: 1;
+  transform: translateY(40px);
+}
+
+.frame:hover::after {
+  opacity: 1;
+  transform: translateY(-40px);
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  text-align: center;
+  z-index: 100;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+}
+
+.text h1 {
+  margin: 0;
+  transition: all 0.5s ease-in-out;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 60px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.text h2 {
+  margin: 0;
+  transition: all 0.5s ease-in-out;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 28px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.frame:hover .text :nth-child(odd) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.frame:hover .text :nth-child(even) {
+  opacity: 0;
+  transform: translateX(20px);
+}

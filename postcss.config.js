@@ -9,10 +9,10 @@ module.exports = {
     require('postcss-random')({
       noSeed: true
     }),
+    require('postcss-simple-vars'),
     require('postcss-calc')({
       warnWhenCannotResolve: true
     }),
-    require('postcss-simple-vars'),
     require('postcss-nested'),
     require('postcss-color-function')({
       preserveCustomProps: false // delete color function with custom properties
