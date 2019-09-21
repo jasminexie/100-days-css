@@ -54,13 +54,13 @@
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease-in-out;
   content: '';
-  transform: translate(20px, 20px);
+  transform: translate(15px, 15px);
 }
 
 .button:hover::before {
   background: #faaca8;
   color: #fff;
-  transform: translate(20px, 20px);
+  transform: translate(15px, 15px);
 }
 
 .button:hover::after {
