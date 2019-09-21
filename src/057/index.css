@@ -1,0 +1,160 @@
+:root {
+  --frame: 400px;
+  --side-base: 80px;
+  --side-height: 138.564054px;
+  --rotate-z: 72deg;
+  --rotate-x: 37.6deg;
+  --rotate-y: 10deg;
+  --top-translate-z: 153.2px;
+  --side-rotate-x: 100.7deg;
+  --side-translate-y: 135.4px;
+  --side-translate-z: 67.88px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: #000;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  perspective: 1000px;
+  transform: translate(-50%, -50%);
+}
+
+.icosahedron {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  width: calc(2 * var(--side-base));
+  height: var(--side-height);
+  transition: all 3s ease-in-out;
+  cursor: pointer;
+  transform: translate(-50%, -50%) rotateX(100deg) rotateY(20deg);
+  transform-style: preserve-3d;
+}
+
+.icosahedron:hover {
+  transform: translate(-50%, -50%) rotateX(-400deg) rotateY(-350deg);
+}
+
+.side {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 var(--side-base) var(--side-height) var(--side-base);
+  border-color: transparent transparent white transparent;
+  transform-origin: 50% 0;
+}
+
+.top,
+.bottom,
+.side-one,
+.side-two {
+  transform: translateY(70px);
+  transform-style: preserve-3d;
+}
+
+#side-1 {
+  opacity: 0.6;
+  transform: translateZ(calc(-1 * var(--top-translate-z))) rotateX(var(--rotate-x));
+}
+
+#side-2 {
+  opacity: 0.8;
+  transform: translateZ(calc(-1 * var(--top-translate-z))) rotateZ(var(--rotate-z)) rotateX(var(--rotate-x));
+}
+
+#side-3 {
+  opacity: 0.6;
+  transform: translateZ(calc(-1 * var(--top-translate-z))) rotateZ(calc(2 * var(--rotate-z))) rotateX(var(--rotate-x));
+}
+
+#side-4 {
+  opacity: 0.8;
+  transform: translateZ(calc(-1 * var(--top-translate-z))) rotateZ(calc(3 * var(--rotate-z))) rotateX(var(--rotate-x));
+}
+
+#side-5 {
+  opacity: 0.7;
+  transform: translateZ(calc(-1 * var(--top-translate-z))) rotateZ(calc(4 * var(--rotate-z))) rotateX(var(--rotate-x));
+}
+
+#side-6 {
+  opacity: 0.7;
+  transform: translateZ(var(--top-translate-z)) rotate(36deg) rotateX(calc(-1 * var(--rotate-x)));
+}
+
+#side-7 {
+  opacity: 0.8;
+  transform: translateZ(var(--top-translate-z)) rotate(36deg) rotateZ(var(--rotate-z)) rotateX(calc(-1 * var(--rotate-x)));
+}
+
+#side-8 {
+  opacity: 0.7;
+  transform: translateZ(var(--top-translate-z)) rotate(36deg) rotateZ(calc(2 * var(--rotate-z))) rotateX(calc(-1 * var(--rotate-x)));
+}
+
+#side-9 {
+  opacity: 0.8;
+  transform: translateZ(var(--top-translate-z)) rotate(36deg) rotateZ(calc(3 * var(--rotate-z))) rotateX(calc(-1 * var(--rotate-x)));
+}
+
+#side-10 {
+  opacity: 0.6;
+  transform: translateZ(var(--top-translate-z)) rotate(36deg) rotateZ(calc(4 * var(--rotate-z))) rotateX(calc(-1 * var(--rotate-x)));
+}
+
+#side-11 {
+  opacity: 0.8;
+  transform: translateY(var(--side-translate-y)) translateZ(var(--side-translate-z)) rotateX(calc(var(--side-rotate-x) * -1));
+}
+
+#side-12 {
+  opacity: 0.7;
+  transform: rotateZ(var(--rotate-z)) translateY(var(--side-translate-y)) translateZ(var(--side-translate-z)) rotateX(calc(var(--side-rotate-x) * -1));
+}
+
+#side-13 {
+  opacity: 0.8;
+  transform: rotateZ(calc(2 * var(--rotate-z))) translateY(var(--side-translate-y)) translateZ(var(--side-translate-z)) rotateX(calc(var(--side-rotate-x) * -1));
+}
+
+#side-14 {
+  opacity: 0.7;
+  transform: rotateZ(calc(3 * var(--rotate-z))) translateY(var(--side-translate-y)) translateZ(var(--side-translate-z)) rotateX(calc(var(--side-rotate-x) * -1));
+}
+
+#side-15 {
+  opacity: 0.8;
+  transform: rotateZ(calc(4 * var(--rotate-z))) translateY(var(--side-translate-y)) translateZ(var(--side-translate-z)) rotateX(calc(var(--side-rotate-x) * -1));
+}
+
+#side-16 {
+  opacity: 0.6;
+  transform: rotateZ(calc(0.5 * var(--rotate-z))) translateY(var(--side-translate-y)) translateZ(calc(var(--side-translate-z) * -1)) rotateX(var(--side-rotate-x));
+}
+
+#side-17 {
+  opacity: 0.5;
+  transform: rotateZ(calc(1.5 * var(--rotate-z))) translateY(var(--side-translate-y)) translateZ(calc(var(--side-translate-z) * -1)) rotateX(var(--side-rotate-x));
+}
+
+#side-18 {
+  opacity: 0.6;
+  transform: rotateZ(calc(2.5 * var(--rotate-z))) translateY(var(--side-translate-y)) translateZ(calc(var(--side-translate-z) * -1)) rotateX(var(--side-rotate-x));
+}
+
+#side-19 {
+  opacity: 0.5;
+  transform: rotateZ(calc(3.5 * var(--rotate-z))) translateY(var(--side-translate-y)) translateZ(calc(var(--side-translate-z) * -1)) rotateX(var(--side-rotate-x));
+}
+
+#side-20 {
+  opacity: 0.6;
+  transform: rotateZ(calc(4.5 * var(--rotate-z))) translateY(var(--side-translate-y)) translateZ(calc(var(--side-translate-z) * -1)) rotateX(var(--side-rotate-x));
+}
