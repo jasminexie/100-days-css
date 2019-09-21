@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      - var x = 1
+      while x <= 200
+        div(class=`trigger trigger-${x}`)
+        - x += 1
+      .plane
+        .text hover
+      .text hover
