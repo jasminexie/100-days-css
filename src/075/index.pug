@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      .ball
+        - var x = 1;
+        while x <= 6
+          .circle(id=`circle-${x}`)
+          - x += 1
