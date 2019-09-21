@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      - var x = 1
+      while x <= 50
+        div(class=`circle circle-${x}`)
+        - x += 1
