@@ -1,0 +1,53 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: #12836d;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  height: 240px;
+  flex-direction: column;
+}
+
+.button {
+  width: 200px;
+  height: 60px;
+  background: #fff;
+  transition: all 0.4s ease-in-out;
+  color: #0f0c29;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+@define-mixin button $n {
+  .button:nth-child($n):hover {
+    box-shadow: calc(2px * $n) calc(4px * $n) calc(4px * $n) rgba(0, 0, 0, 0.4);
+    transform: scale(calc(1.02 + 0.01 * $n));
+  }
+}
+
+@mixin button 1;
+@mixin button 2;
+@mixin button 3;
