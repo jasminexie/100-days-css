@@ -1,0 +1,71 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: #ff69b4;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.ball {
+  position: absolute;
+  top: 175px;
+  left: 175px;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  animation: ball 2s ease-in-out infinite;
+}
+
+@for $i from 1 to 6 {
+  .blur:nth-child($i) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: blur-$i 2s ease-in-out infinite;
+  }
+
+  @keyframes blur-$i {
+    0%,
+    50%,
+    100% {
+      transform: translateX(0);
+    }
+
+    25% {
+      transform: translate(calc(-6px * $i));
+    }
+
+    75% {
+      transform: translateX(calc(6px * $i));
+    }
+  }
+}
+
+@keyframes ball {
+  0% {
+    transform: translateX(-150px);
+  }
+
+  50% {
+    transform: translateX(150px);
+  }
+
+  100% {
+    transform: translateX(-150px);
+  }
+}
