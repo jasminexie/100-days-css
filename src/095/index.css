@@ -1,0 +1,141 @@
+:root {
+  --frame: 400px;
+  --color-pig: #faa;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: #6ac2e3;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.head {
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  width: 160px;
+  height: 155px;
+  background: var(--color-pig);
+  border-radius: 50%;
+}
+
+.snout {
+  position: absolute;
+  top: 90px;
+  left: 45px;
+  width: 70px;
+  height: 50px;
+  background: color(var(--color-pig) tint(30%));
+  border-radius: 50%;
+}
+
+.nostril {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #ce666d;
+}
+
+.nostril-left {
+  top: 15px;
+  left: 18px;
+}
+
+.nostril-right {
+  top: 15px;
+  right: 18px;
+}
+
+.eye {
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #fff;
+  animation: eye 15s ease-in-out infinite;
+}
+
+.eye::after {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 4px;
+  height: 4px;
+  background: #212;
+  border-radius: 50%;
+  animation: pupil 15s ease-in-out infinite;
+  content: '';
+}
+
+.eye-left {
+  top: 65px;
+  left: 35px;
+}
+
+.eye-right {
+  top: 65px;
+  right: 35px;
+}
+
+.ear {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: color(var(--color-pig) tint(30%));
+  border: 7px solid var(--color-pig);
+  border-radius: 15px;
+  z-index: -1;
+  box-sizing: border-box;
+  transform: translateY(6px) skew(5deg, 15deg);
+}
+
+.ear-right {
+  right: 0;
+  transform: translateY(6px) skew(-5deg, -15deg);
+}
+
+@keyframes eye {
+  0%,
+  24%,
+  26%,
+  49%,
+  51%,
+  79%,
+  81%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  25%,
+  50%,
+  80% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes pupil {
+  0%,
+  24%,
+  26%,
+  49%,
+  51%,
+  79%,
+  81%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  25%,
+  50%,
+  80% {
+    transform: scaleY(2);
+  }
+}
