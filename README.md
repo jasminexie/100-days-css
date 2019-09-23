@@ -1,6 +1,30 @@
 # 100 days of CSS challenge
 
-OR: 100 days of trying not to suck at CSS.
+## 🎃 Hacktoberfest 2019 Update
+
+[Hacktoberfest](https://hacktoberfest.digitalocean.com/) contributions are welcome! Any GitHub user may contribute. You may review the issues section; you are welcome to fix any bugs in the existing challenges, add features, or you can submit your own challenge!
+
+To submit a challenge:
+
+1. Fork this repository. Clone the forked repository and install dependencies.
+2. Go to [100 Days CSS](https://100dayscss.com/) Challenge homepage.
+3. Select a challenge that is not completed yet on this repo.
+4. Review this document (especially the sections on development) and start on a challenge. Complete the challenge. You are not required to write the `README.md` on your challenge, but if you do, please write it in English and add your GitHub id somewhere on the page, so credit will go where credit is due.
+5. Commit your changes. Please try to use the [conventional commit syntax](https://github.com/conventional-commits/conventionalcommits.org) when commiting. It's recommended to commit once per challenge, with a commit message of `feat: 012`. Please submit an individual PR for each challenge.
+
+PRs will not be merged if:
+
+* They are spam, irrelevent, or offensive.
+* The `README.md` of other existing challenges are modified.
+* `README.md` is written in a non-English language.
+
+Issues and PRs are welcome!
+
+---
+
+## About this repository
+
+100 days of CSS - OR: 100 days of trying not to suck at CSS.
 
 My goal: to write animations with no javascript. Pure CSS (or pure PostCSS, if you will).
 I'll make an exception for Pug, because although it's technically Javascript pre-processing
@@ -61,8 +85,3 @@ And the following abilities:
 * To investigate, explain and enforce industry standards as well as I can.
 * To find and bookmark some very useful CSS sites
 * To hopefully write some reusable CSS snippets
-
-
-## TODO
-
-(Nothing at the moment)
