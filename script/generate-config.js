@@ -33,7 +33,9 @@ function main() {
     id: feature.subject.match(subjectRegexp)[1]
   }));
 
-  const features = unionBy(commitFeatures, allRange, 'id');
+  const features = unionBy(commitFeatures, allRange, 'id').sort(
+    (a, b) => parseInt(a.id) - parseInt(b.id)
+  );
 
   //
   // write `features` to `config.json`
