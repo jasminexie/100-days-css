@@ -10,7 +10,7 @@
     "lint:css": "stylelint src/**/*.css --fix",
     "lint:pug": "pug-lint src/**/*.pug",
     "lint": "npm run lint:css && npm run lint:pug",
-    "update-config": "babel-node ./script/generate-range",
+    "update-config": "babel-node ./script/generate-config",
     "test": "exit 0"
   },
   "husky": {
