@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      .ball
+        - var x = 9, y = 1
+        while x > 0
+          .slice(id=`slice-up-${x}`)
+          - x -= 1
+        .slice(id="slice-middle")
+        while y < 10
+          .slice(id=`slice-down-${y}`)
+          - y += 1
