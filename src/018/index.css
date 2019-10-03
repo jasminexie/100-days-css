@@ -1,0 +1,123 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.colours {
+  width: 100%;
+  height: 100%;
+}
+
+.green-wrapper {
+  width: 100%;
+  height: 50%;
+  background-color: #a6ff8b;
+}
+
+.pink-wrapper {
+  width: 100%;
+  height: 50%;
+  background-color: #ffadf1;
+}
+
+.ellipse {
+  position: absolute;
+  top: calc(50% - 40%);
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: #a6ff8b;
+  animation: elastic 5s ease-in-out infinite;
+  clip-path: ellipse(50% 50% at 50% 50%);
+}
+
+@keyframes elastic {
+  0% {
+    transform: rotateX(90deg);
+  }
+
+  15% {
+    transform: rotateX(150deg);
+  }
+
+  20% {
+    transform: rotateX(50deg);
+  }
+
+  25% {
+    transform: rotateX(120deg);
+  }
+
+  30% {
+    transform: rotateX(70deg);
+  }
+
+  35% {
+    transform: rotateX(100deg);
+  }
+
+  40% {
+    transform: rotateX(83deg);
+  }
+
+  45% {
+    background-color: #a6ff8b;
+    transform: rotateX(90deg);
+  }
+
+  50% {
+    background-color: #ffadf1;
+    transform: rotateX(90deg);
+  }
+
+  65% {
+    transform: rotateX(30deg);
+  }
+
+  70% {
+    transform: rotateX(130deg);
+  }
+
+  75% {
+    transform: rotateX(60deg);
+  }
+
+  80% {
+    transform: rotateX(110deg);
+  }
+
+  85% {
+    transform: rotateX(80deg);
+  }
+
+  90% {
+    transform: rotateX(97deg);
+  }
+
+  95% {
+    background-color: #ffadf1;
+    transform: rotateX(87deg);
+  }
+
+  100% {
+    background-color: #a6ff8b;
+    transform: rotateX(90deg);
+  }
+}
