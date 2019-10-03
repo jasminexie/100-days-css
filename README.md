@@ -14,13 +14,13 @@
 
 ### Before opening a PR, please rebase against the latest master branch.
 
-0. Discard all changes to `package-lock.json`.
-1. Add this repository to your fork's upstream if you haven't already: `git remote add upstream git@github.com:jasminexie/100-days-css.git`
-2. Fetch the latest master from upstream: `git fetch upstream master`
-3. Rebase against upstream master: `git rebase upstream/master`
-4. If there are conflicts, please resolve them. Mark them as resolved with `git add <conflicted_file>` or `git rm <conflicted_file>`.
-5. Once all conflicts are resolved, run `git rebase --continue`.
-6. Now you can make a pull request!
+1. If you have not modified any dependencies, discard all changes to `package-lock.json`.
+2. Add this repository to your fork's upstream if you haven't already: `git remote add upstream git@github.com:jasminexie/100-days-css.git`
+3. Fetch the latest master from upstream: `git fetch upstream master`
+4. Rebase against upstream master: `git rebase upstream/master`
+5. If there are conflicts, please resolve them. Mark them as resolved with `git add <conflicted_file>` or `git rm <conflicted_file>`.
+6. Once all conflicts are resolved, run `git rebase --continue`.
+7. Now you can make a pull request!
 
 ### Other Notes
 
