@@ -3,62 +3,75 @@
     <h1>{{ days }} Days of CSS</h1>
     <div class="content">
       <el-button icon="el-icon-arrow-left" circle @click="move(-1)"></el-button>
-      <iframe :src="options[selectedIndex] + '/index.html'"></iframe>
+      <iframe :src="selectedItem.id + '/index.html'"></iframe>
       <el-button icon="el-icon-arrow-right" circle @click="move(1)"></el-button>
     </div>
     <el-select v-model="selectedIndex" filterable placeholder="Select A Day">
-      <el-option v-for="(op, index) in options" :key="op" :label="'Day ' + op" :value="index" />
+      <el-option
+        v-for="(op, index) in options"
+        :key="op.id"
+        :label="'Day ' + op.id"
+        :value="index"
+      />
     </el-select>
+    <div v-if="selectedItem.author" class="day-info">
+      <b>{{selectedItem.author}}</b>
+      <i> - {{selectedItem.date}}</i>
+    </div>
   </section>
 </template>
 
 <script>
-  import config from '../config.json';
-  import Vue from 'vue';
+import config from '../config.json';
+import Vue from 'vue';
 
-  export default Vue.extend({
-    data() {
-      return {
-        options: config || [],
-        // private property, do not edit!!
-        i: 0
-      };
-    },
-    computed: {
-      selectedIndex: {
-        get: function () {
-          return this.i;
-        },
-        set: function (val) {
-          if (val < 0) {
-            this.i = this.options.length - 1;
-          } else if (val >= this.options.length) {
-            this.i = 0;
-          } else {
-            this.i = val;
-          }
-        }
+export default Vue.extend({
+  data() {
+    return {
+      options: config || [],
+      // private property, do not edit!!
+      i: 0
+    };
+  },
+  computed: {
+    selectedIndex: {
+      get: function () {
+        return this.i;
       },
-      days() {
-        return this.options.length;
+      set: function (val) {
+        if (val < 0) {
+          this.i = this.options.length - 1;
+        } else if (val >= this.options.length) {
+          this.i = 0;
+        } else {
+          this.i = val;
+        }
       }
     },
-    methods: {
-      move(step) {
-        this.selectedIndex += step;
-      }
+    selectedItem() {
+      return this.options[this.selectedIndex];
     },
-    mounted() {
-      this.selectedIndex = Math.floor(Math.random() * this.options.length);
+    days() {
+      return this.options.length;
     }
-  });
+  },
+  methods: {
+    move(step) {
+      this.selectedIndex += step;
+    }
+  },
+  mounted() {
+    this.selectedIndex = Math.floor(Math.random() * this.options.length);
+  }
+});
 </script>
 
 <style>
   body {
     min-height: 600px;
     min-width: 600px;
-    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+      "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   }
 </style>
 
@@ -103,5 +116,12 @@
   i {
     display: block;
     cursor: pointer;
+  }
+
+  .day-info {
+    // line-height: 1.3;
+    b, i {
+      display: inline;
+    }
   }
 </style>
