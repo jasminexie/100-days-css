@@ -31,11 +31,11 @@ the Hacktoberfest challenge.
 
 PRs will not be merged if:
 
-* They are spam, irrelevent, or offensive. These PRs will be marked as `invalid`.
+* They are spam, irrelevent, or offensive.
 * They are existing, non bug-fixing modifications of another challenge.
 * The `README.md` of other existing challenges are modified. Please respect other contributors' work and leave them as they are!
 
-If a PR meets any of the above criteria, you will have a 7-day period to edit your PR before it is marked as "invalid".
+If a PR meets any of the above criteria, you will have a 7-day period to edit your PR before it is marked as `invalid`.
 
 I will request changes if:
 
