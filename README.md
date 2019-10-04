@@ -43,7 +43,7 @@ I will request changes if:
 * No dependencies are updated but `package-lock.json` is modified.
 * There are obvious quality problems in the code.
 
-If a PR meets any of the above criteria, I will request changes, but your PR will not me marked as `invalid` if you do not make these changes. It will simply not be merged :)
+If a PR meets any of the above criteria, I will request changes, but your PR will not be marked as `invalid` if you do not make these changes. It will simply not be merged :)
 
 I will try to review PRs within three days. Issues and PRs are welcome!
 
