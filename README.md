@@ -1,8 +1,13 @@
 # 100 days of CSS challenge
 
-## 🎃 Hacktoberfest 2019 Update
+## 🎃 Hacktoberfest 2019 Update (2)
 
-[Hacktoberfest](https://hacktoberfest.digitalocean.com/) contributions are welcome! Any GitHub user may contribute. You may review the issues section; you are welcome to fix any bugs in the existing challenges, add features, or you can submit your own challenge!
+This years' [Hacktoberfest](https://hacktoberfest.digitalocean.com/) values quality of repos, discouraging easy one-line PRs. Any such repo encouraging users to make simple contributions may be an "excluded" repo - PRs in excluded repos will not count towards the Hacktoberfest challenge.
+
+I personally do not think that this repository is a simple "+1" PR - completing a challenge requires basic knowledge of the technology stack I use - at least PostCSS and Pug is required, and there are very specific requirements toward completing a challenge. Few of these challenges are truly trivial. But I understand and advocate the values of Hacktoberfest, and I encourage you contribute in other repositories.
+
+In the meantime, you are welcome to submit a new challenge! I am limiting challenge submissions to one PR per user; after your first challenge PR, all others will be marked as `invalid` and will not be able to count towards
+the Hacktoberfest challenge.
 
 ### To submit a challenge:
 
@@ -27,14 +32,20 @@
 PRs will not be merged if:
 
 * They are spam, irrelevent, or offensive. These PRs will be marked as `invalid`.
+* They are existing, non bug-fixing modifications of another challenge.
 * The `README.md` of other existing challenges are modified. Please respect other contributors' work and leave them as they are!
+
+If a PR meets any of the above criteria, you will have a 7-day period to edit your PR before it is marked as "invalid".
 
 I will request changes if:
 
+* Your PR has conflicts with the latest master branch.
 * No dependencies are updated but `package-lock.json` is modified.
 * There are obvious quality problems in the code.
 
-Issues and PRs are welcome!
+If a PR meets any of the above criteria, I will request changes, but your PR will not me marked as `invalid` if you do not make these changes. It will simply not be merged :)
+
+I will try to review PRs within three days. Issues and PRs are welcome!
 
 ---
 
