@@ -105,3 +105,5 @@ input[type="checkbox"]:checked ~ .shield.two {
   transition: all 0.5s ease-in 0.1s;
   transform: scale(1);
 }
+
+/*----------------------------*/
