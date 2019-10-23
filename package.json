@@ -27,7 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "element-ui": "^2.9.1",
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },
