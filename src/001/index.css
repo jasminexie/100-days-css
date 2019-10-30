@@ -33,8 +33,9 @@
   display: block;
   width: 24px;
   height: 100px;
-  background: var(--color);
+  background: currentColor;
   border-radius: 3px;
+  color: var(--color);
   z-index: 3;
 
   @mixin shadow;
@@ -46,8 +47,9 @@
   display: block;
   width: 20px;
   height: 40px;
-  background: var(--color);
+  background: currentColor;
   border-radius: 3px;
+  color: var(--color);
   z-index: 1;
   transform: rotate(45deg);
   transform-origin: 0 0;
@@ -60,8 +62,9 @@
   top: 0;
   width: 100px;
   height: 100px;
-  border: 24px solid var(--color);
+  border: 24px solid currentColor;
   border-radius: 50px;
+  color: var(--color);
   box-sizing: border-box;
 
   @mixin shadow;
