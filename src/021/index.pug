@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      .wrapper
+        svg.face(width="100" height="100")
+          circle(cx="50" cy="50" r="25")
+        svg.eye(width="12" height="12")
+          circle(cx="6" cy="6" r="6")
+      svg.dots(width="240" height="14")
+        polyline(points="0,7 240,7")
