@@ -1,6 +1,3 @@
 # 030
 
-Time taken: 
-
-Things I learnt:
-
+Time taken: ~20mins
