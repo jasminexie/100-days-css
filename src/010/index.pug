@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    style
+      include index.css
+    link(
+      rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    )
+  body
+    .frame
+      .center
+        - var x = 60
+        while x > 0
+          .dot(id=`dot-${x}`)
+          - x -= 1
+        svg.ring
+          circle(cx="101" cy="101" r="99.5")
+        .text
+          .date mon 15 jan 2015
+          .time 11:42
+          .detail
+            span.fa.fa-heart
+            span 81
+            span 1248 kcal
+
