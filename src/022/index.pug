@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      header
+        | your daily
+        br
+        span progress
+      .wheel.large
+        svg.circle
+          circle.bg(cx=57 cy=57 r=52)
+          circle.progress(cx=57 cy=57 r=52)
+        p
+          | 2758
+          br
+          span kcal
+      .wheels
+        .wheel#w1
+          svg.circle
+            circle.bg(cx=40 cy=40 r=37)
+            circle.progress(cx=40 cy=40 r=37)
+          p
+            | 8563
+            br
+            span steps
+        .wheel#w2
+          svg.circle
+            circle.bg(cx=40 cy=40 r=37)
+            circle.progress(cx=40 cy=40 r=37)
+          p
+            | 6.2
+            br
+            span km

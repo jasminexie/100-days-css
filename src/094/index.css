@@ -1,0 +1,137 @@
+:root {
+  --frame: 400px;
+  --color-branch: #e8c87e;
+  --color-leaf: #e84624;
+  --color-bg: #e0f0e5;
+  --width-branch: 4px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: var(--color-bg);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.tree {
+  position: absolute;
+  top: 120px;
+  left: 198px;
+  width: var(--width-branch);
+  height: 200px;
+  animation: tree 1s ease-in-out both;
+  transform-origin: 50% 100%;
+}
+
+.tree::before {
+  position: relative;
+  display: block;
+  width: var(--width-branch);
+  height: 200px;
+  background: var(--color-branch);
+  border-radius: calc(var(--width-branch) / 2);
+  z-index: 10;
+  content: '';
+}
+
+.tree::after {
+  position: relative;
+  left: -40px;
+  display: block;
+  width: 84px;
+  height: var(--width-branch);
+  background: color(var(--color-bg) shade(20%));
+  border-radius: calc(var(--width-branch) / 2);
+  content: '';
+}
+
+.branch {
+  position: absolute;
+  width: var(--width-branch);
+  height: 20px;
+  background: var(--color-branch);
+  border-radius: calc(var(--width-branch) / 2);
+  z-index: 10;
+  transform-origin: 50% 100%;
+}
+
+.branch:nth-child(2n) {
+  left: 0;
+  transform: rotate(40deg);
+}
+
+.branch:nth-child(2n+1) {
+  right: 0;
+  transform: rotate(-40deg);
+}
+
+@for $i from 1 to 5 {
+  .branch:nth-child($i) {
+    top: calc($i * 20px - 20px);
+    height: calc($i * 8px + 10px);
+  }
+}
+
+.leaf {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 62px 204px 62px;
+  border-color: transparent transparent color(var(--color-leaf) shade(25%)) transparent;
+  animation: leaf 1s ease-in-out 1s both;
+  transform: scaleX(0);
+}
+
+.leaf::before {
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-width: 0 62px 204px 0;
+  border-color: transparent transparent var(--color-leaf) transparent;
+  content: '';
+}
+
+@keyframes tree {
+  0% {
+    transform: scale(0);
+  }
+
+  60% {
+    transform: scale(1.05);
+  }
+
+  80% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes leaf {
+  0% {
+    transform: scaleX(0);
+  }
+
+  60% {
+    transform: scaleX(1.05);
+  }
+
+  80% {
+    transform: scaleX(0.95);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}

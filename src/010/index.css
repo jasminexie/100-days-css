@@ -1,0 +1,114 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: #4c4c4c;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 212px;
+  height: 212px;
+  border: 7px solid #3a3a3a;
+  background: #242424;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 202px;
+  height: 202px;
+  animation: ring 5s linear infinite;
+  fill: none;
+  stroke: #f85b5b;
+  stroke-dasharray: 628.31852;
+  stroke-width: 3px;
+  transform: rotate(-90deg);
+}
+
+.dot {
+  position: absolute;
+  top: calc((212px - 2px) / 2);
+  left: calc((212px - 2px) / 2);
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+@for $i from 1 to 60 {
+  #dot-$i {
+    transform: rotate(calc(6deg * $i)) translateX(92px);
+  }
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 105px;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.text .time {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.detail {
+  display: flex;
+}
+
+.fa {
+  display: block;
+  margin-right: 6px;
+  animation: beat 1s ease infinite;
+  color: #f85b5b;
+}
+
+.detail :last-child {
+  display: block;
+  text-align: right;
+  flex: 1;
+}
+
+@keyframes beat {
+  0%,
+  100% {
+    transform: translateY(2px) scale(0.8);
+  }
+
+  35% {
+    transform: translateY(2px) scale(1);
+  }
+}
+
+@keyframes ring {
+  0% {
+    stroke-dashoffset: 628.31852;
+  }
+
+  100% {
+    stroke-dashoffset: -628.31852;
+  }
+}

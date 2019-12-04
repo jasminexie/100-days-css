@@ -1,0 +1,90 @@
+:root {
+  --frame: 400px;
+  --color-bg: #2c2e2e;
+  --color-primary: #f4d146;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: var(--color-bg);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+}
+
+.face {
+  animation: face 0.3s ease-in-out infinite alternate;
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-dasharray: 340;
+  stroke-linecap: butt;
+  stroke-width: 50px;
+}
+
+.eye {
+  position: absolute;
+  animation: eye 0.3s ease-in-out infinite alternate;
+  fill: var(--color-bg);
+}
+
+.dots {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.dots polyline {
+  animation: dots 0.6s linear infinite;
+  stroke: var(--color-primary);
+  stroke-dasharray: 0 50px;
+  stroke-linecap: round;
+  stroke-width: 14px;
+}
+
+@keyframes face {
+  0% {
+    stroke-dashoffset: 180px;
+  }
+
+  100% {
+    stroke-dashoffset: 220px;
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes eye {
+  0% {
+    top: 20px;
+    right: 30px;
+  }
+
+  100% {
+    top: 18px;
+    right: 40px;
+  }
+}
+
+@keyframes dots {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 50px;
+  }
+}

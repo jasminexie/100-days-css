@@ -1,0 +1,158 @@
+:root {
+  --frame: 400px;
+  --color-white: #fff;
+  --color-detail: #648192;
+  --color-wheel-1: #27e1ae;
+  --color-wheel-2: #5ce1ec;
+  --color-bg: #1b2a33;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  width: var(--frame);
+  height: var(--frame);
+  background: linear-gradient(to bottom, #28404e 0%, #1c2e38 100%);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+}
+
+header {
+  color: var(--color-white);
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.wheel {
+  position: relative;
+  text-align: center;
+}
+
+.wheels {
+  display: flex;
+  justify-content: center;
+}
+
+.wheels .wheel {
+  margin: 0 20px;
+}
+
+.wheel p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  margin: 0;
+  color: var(--color-white);
+  font-size: 17px;
+  text-align: center;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+}
+
+.wheel p span {
+  color: var(--color-detail);
+  font-size: 12px;
+}
+
+.large {
+  margin: 25px 0 20px 0;
+}
+
+.large p {
+  font-size: 24px;
+}
+
+.large p span {
+  font-size: 16px;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+}
+
+.large .circle {
+  width: 114px;
+  height: 114px;
+}
+
+.bg {
+  fill: none;
+  stroke: var(--color-bg);
+  stroke-width: 6px;
+}
+
+.large .bg {
+  stroke-width: 10px;
+}
+
+.progress {
+  fill: none;
+  stroke: var(--color-wheel-2);
+  stroke-dasharray: 232.4778524;
+  stroke-linecap: round;
+  stroke-width: 6px;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.large .progress {
+  animation: w0 1.5s ease-in-out both;
+  stroke: var(--color-wheel-1);
+  stroke-dasharray: 326.7256304;
+  stroke-dashoffset: 60;
+  stroke-width: 10px;
+}
+
+#w1 .progress {
+  animation: w1 1.5s ease-in-out both;
+  stroke-dashoffset: 80;
+}
+
+#w2 .progress {
+  animation: w2 1.5s ease-in-out both;
+  stroke-dashoffset: 140;
+}
+
+@keyframes w0 {
+  0% {
+    stroke-dashoffset: 326.7256304;
+  }
+
+  100% {
+    stroke-dashoffset: 60;
+  }
+}
+
+@keyframes w1 {
+  0% {
+    stroke-dashoffset: 232.4778524;
+  }
+
+  100% {
+    stroke-dashoffset: 80;
+  }
+}
+
+@keyframes w2 {
+  0% {
+    stroke-dashoffset: 232.4778524;
+  }
+
+  100% {
+    stroke-dashoffset: 140;
+  }
+}

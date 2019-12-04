@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      .tree
+        - var x = 5
+        while x > 0
+          .branch
+          - x -= 1;
+        .leaf
