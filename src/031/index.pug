@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      .dots
+        - x = 20
+        while x > 0
+          .dot(id=`dot-${x}`)
+          - x -= 1
