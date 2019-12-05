@@ -1,0 +1,75 @@
+:root {
+  --frame: 400px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--frame);
+  height: var(--frame);
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow:
+    2px 4px 4px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 4px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+}
+
+input[type='checkbox']:checked ~ label {
+  border: 14px solid white;
+  background: #a8ff78;
+  box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sparkles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.sparkle {
+  position: absolute;
+  top: -8px;
+  left: -1px;
+  width: 2px;
+  height: 19px;
+  background: #fff;
+  transition: none;
+}
+
+@for $i from 1 to 12 {
+  #sparkle-$i {
+    transform: rotate(calc(30deg * $i)) translateY(-15px) scaleY(0);
+  }
+
+  input[type='checkbox']:checked ~ .sparkles {
+    #sparkle-$i {
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      transform: rotate(calc(30deg * $i)) translateY(-40px) scaleY(1);
+    }
+  }
+}

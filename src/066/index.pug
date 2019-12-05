@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    style
+      include index.css
+  body
+    .frame
+      input(type="checkbox" id="check")
+      label(for="check")
+      .sparkles
+        - x = 12;
+        while x > 0
+          .sparkle(id=`sparkle-${x}`)
+          - x -= 1;
