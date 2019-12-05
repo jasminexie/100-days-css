@@ -68,8 +68,8 @@ input[type='checkbox']:checked ~ label {
   input[type='checkbox']:checked ~ .sparkles {
     #sparkle-$i {
       opacity: 0;
-      transition: all 0.5s ease-in-out;
-      transform: rotate(calc(30deg * $i)) translateY(-40px) scaleY(1);
+      transition: all 0.4s ease-in-out 0.1s;
+      transform: rotate(calc(30deg * $i)) translateY(-50px) scaleY(1);
     }
   }
 }
