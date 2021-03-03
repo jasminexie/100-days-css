@@ -50,7 +50,7 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-random": "^1.0.9",
     "postcss-simple-vars": "^5.0.2",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "pug-lint": "^2.5.0",
     "sass": "^1.21.0",
     "stylelint": "^10.0.1",
